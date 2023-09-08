@@ -1,5 +1,5 @@
 # Function
-## Function with required and optional unnamed parameters (= parameters in square brackets)
+## Function with required and optional unnamed (aka positional) parameters (= parameters in square brackets)
 ```dart
 // a ia a required unnamed parameter.
 // b is an optional unnamed parameter whose default value is null.
@@ -42,6 +42,13 @@ Run the following.
 cd /Applications/Android Studio.app/Contents
 ln -s jbr jre
 ```
+
+## Can a function have both optional positional and named parameters?
+No.
+
+> A function can’t have both optional positional and named parameters.
+
+https://dart.dev/codelabs/dart-cheatsheet#named-parameters
 
 # Cocoapods
 ## How to install the specific version of Cocoapods
