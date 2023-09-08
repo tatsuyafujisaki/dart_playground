@@ -1,8 +1,9 @@
 # Function
 ## Function with optional parameters (= parameters in square brackets)
 ```kotlin
-// b and c are optional parameters, where c has a default value.
-void f(String a, [String? b, String? c = 'c']) {}
+// b is an optional parameter whose default value is null.
+// c is an optional parameter with a default value.
+void f(String a, [String? b, String c = 'c']) {}
 
 void main() {
   f('a');
@@ -13,8 +14,9 @@ void main() {
 
 ## Function with named optional parameters (= parameters in curly braces)
 ```kotlin
-// b and c are named optional parameters, where c has a default value.
-void f(String a, {String? b, String? c = 'c'}) {}
+// b is a named optional parameter whose default value is null.
+// c is a named optional parameter with a default value.
+void f(String a, {String? b, String c = 'c'}) {}
 
 void main() {
   f('a');
