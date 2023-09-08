@@ -29,6 +29,27 @@ void main() {
 }
 ```
 
+# Class
+## Function with required and optional unnamed (aka positional) parameters (= parameters in square brackets)
+```dart
+// a ia a required unnamed parameter.
+// b is an optional unnamed parameter whose default value is null.
+// c is an optional unnamed parameter with a default value.
+class MyClass {
+  String a;
+  String? b;
+  String c;
+
+  MyClass(this.a, [this.b, this.c = 'c']);
+}
+
+void main() {
+  final myClass1 = MyClass('a');
+  final myClass2 = MyClass('a', 'b');
+  final myClass3 = MyClass('a', 'b', 'c');
+}
+```
+
 # flutter doctor
 ## What if `flutter doctor` fails for the Android toolchain?
 Run the following.
