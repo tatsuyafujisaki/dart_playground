@@ -1,8 +1,9 @@
 # Function
-## Function with optional parameters (= parameters in square brackets)
-```kotlin
-// b is an optional parameter whose default value is null.
-// c is an optional parameter with a default value.
+## Function with required and optional unnamed parameters (= parameters in square brackets)
+```dart
+// a ia a required unnamed parameter.
+// b is an optional unnamed parameter whose default value is null.
+// c is an optional unnamed parameter with a default value.
 void f(String a, [String? b, String c = 'c']) {}
 
 void main() {
@@ -12,16 +13,19 @@ void main() {
 }
 ```
 
-## Function with named optional parameters (= parameters in curly braces)
-```kotlin
-// b is a named optional parameter whose default value is null.
-// c is a named optional parameter with a default value.
-void f(String a, {String? b, String c = 'c'}) {}
+## Function with required and optional named parameters (= parameters in curly braces)
+```dart
+// a ia a required unnamed parameter.
+// b ia a required named parameter.
+// c is a optional named parameter whose default value is null.
+// d is a optional named parameter with a default value.
+void f(String a, {required String b, String? c, String d = 'c'}) {}
 
 void main() {
-  f('a');
+  f('a', b: 'b');
   f('a', b: 'b');
   f('a', b: 'b', c: 'c');
+  f('a', b: 'b', c: 'd');
 }
 ```
 
