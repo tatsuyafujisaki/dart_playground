@@ -60,13 +60,13 @@ class MyClass {
   String? b;
   String c;
 
-  MyClass(this.a, [this.b, this.c = 'c']);
+  MyClass(this.a, {this.b, this.c = 'c'});
 }
 
 void main() {
   final myClass1 = MyClass('a');
-  final myClass2 = MyClass('a', 'b');
-  final myClass3 = MyClass('a', 'b', 'c');
+  final myClass2 = MyClass('a', b: 'b');
+  final myClass3 = MyClass('a', b: 'b', c: 'c');
 }
 ```
 
