@@ -1,5 +1,10 @@
 include: package:lints/recommended.yaml
 
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+
 linter:
   rules:
     - always_put_required_named_parameters_first
