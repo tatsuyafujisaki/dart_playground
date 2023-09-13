@@ -20,9 +20,13 @@ void main() async {
       providerContainer.read(myProvider1); // The return type is String.
   print(hello); // Hello!
 
-  final helloName =
-      providerContainer.read(myProvider2('Taro')); // The return type is String.
-  print(helloName); // Hello, Taro!
+  final helloAlice = providerContainer
+      .read(myProvider2('Alice')); // The return type is String.
+  print(helloAlice); // Hello, Alice!
+
+  final helloBob =
+      providerContainer.read(myProvider2('Bob')); // The return type is String.
+  print(helloBob); // Hello, Bob!
 
   final bar = providerContainer.read(barProvider); // The return type is String.
   print(bar); // Bar!
