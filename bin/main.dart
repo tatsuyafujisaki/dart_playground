@@ -4,6 +4,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 final greetProvider = Provider((ref) => 'Hello');
 
 void main() {
-  ProviderContainer()
-      .listen(greetProvider, (previous, value) => print('changed'));
+  final providerContainer = ProviderContainer();
+
+  final hello = providerContainer.read(greetProvider);
+  print(hello); // Hello
 }
