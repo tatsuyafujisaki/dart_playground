@@ -3,7 +3,9 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'main.g.dart';
 
-final fooProvider = Provider.autoDispose((ref) => 'Foo!');
+final myProvider1 = Provider.autoDispose((ref) => 'Hello!');
+final myProvider2 =
+    Provider.autoDispose.family<String, String>((ref, name) => 'Hello, $name!');
 
 @riverpod
 String bar(BarRef ref) => 'Bar!';
@@ -14,8 +16,13 @@ Future<String> baz(BazRef ref) async => 'Baz!';
 void main() async {
   final providerContainer = ProviderContainer();
 
-  final foo = providerContainer.read(fooProvider); // The return type is String.
-  print(foo); // Foo!
+  final hello =
+      providerContainer.read(myProvider1); // The return type is String.
+  print(hello); // Hello!
+
+  final helloName =
+      providerContainer.read(myProvider2('Taro')); // The return type is String.
+  print(helloName); // Hello, Taro!
 
   final bar = providerContainer.read(barProvider); // The return type is String.
   print(bar); // Bar!
