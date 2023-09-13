@@ -24,21 +24,33 @@ String myGeneratedOptionalParameter(
 ]) =>
     'Hello, $name1!';
 
+@riverpod
+String myGeneratedRequiredParameters(
+  MyGeneratedRequiredParametersRef ref,
+  String name1,
+  int age,
+) =>
+    'Hello, $age-year-old $name1!';
+
 void main() async {
   final providerContainer = ProviderContainer();
 
   print(providerContainer.read(myParameterlessProvider)); // Hello!
   print(
-    providerContainer.read(mySingleParameterProvider('Minnie')),
-  ); // Hello, Minnie!
+    providerContainer.read(mySingleParameterProvider('Mickey')),
+  ); // Hello, Mickey!
   print(providerContainer.read(myGeneratedParameterlessProvider)); // Hello!
   print(
-    providerContainer.read(myGeneratedRequiredParameterProvider('Mickey')),
-  ); // Hello, Mickey!
+    providerContainer.read(myGeneratedRequiredParameterProvider('Minnie')),
+  ); // Hello, Minnie!
   print(
     providerContainer.read(myGeneratedOptionalParameterProvider()),
   ); // Hello, Anonymous!
   print(
     providerContainer.read(myGeneratedOptionalParameterProvider('Donald')),
+  ); // Hello, Donald!
+
+  print(
+    providerContainer.read(myGeneratedRequiredParametersProvider('Goofy', 18)),
   ); // Hello, Donald!
 }
