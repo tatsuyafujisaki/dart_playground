@@ -13,16 +13,16 @@ String myGeneratedParameterless(MyGeneratedParameterlessRef ref) => 'Hello!';
 @riverpod
 String myGeneratedRequiredParameter(
   MyGeneratedRequiredParameterRef ref,
-  String firstName,
+  String name1,
 ) =>
-    'Hello, $firstName!';
+    'Hello, $name1!';
 
 @riverpod
 String myGeneratedOptionalParameter(
   MyGeneratedOptionalParameterRef ref, [
-  String firstName = 'Anonymous',
+  String name1 = 'Anonymous',
 ]) =>
-    'Hello, $firstName!';
+    'Hello, $name1!';
 
 void main() async {
   final providerContainer = ProviderContainer();
