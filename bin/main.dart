@@ -8,10 +8,11 @@ final myProvider2 =
     Provider.autoDispose.family<String, String>((ref, name) => 'Hello, $name!');
 
 @riverpod
-String bar(BarRef ref) => 'Bar!';
+String myGenerated1(MyGenerated1Ref ref) => 'Hello!';
 
 @riverpod
-Future<String> baz(BazRef ref) async => 'Baz!';
+String myGenerated2(MyGenerated2Ref ref, String firstName) =>
+    'Hello, $firstName!';
 
 void main() async {
   final providerContainer = ProviderContainer();
@@ -20,24 +21,15 @@ void main() async {
       providerContainer.read(myProvider1); // The return type is String.
   print(hello); // Hello!
 
-  final helloAlice = providerContainer
-      .read(myProvider2('Alice')); // The return type is String.
+  final helloAlice =
+      providerContainer.read(myProvider2('Jane')); // The return type is String.
   print(helloAlice); // Hello, Alice!
 
-  final helloBob =
-      providerContainer.read(myProvider2('Bob')); // The return type is String.
-  print(helloBob); // Hello, Bob!
+  final hello2 = providerContainer
+      .read(myGenerated1Provider); // The return type is String.
+  print(hello2); // Hello!
 
-  final bar = providerContainer.read(barProvider); // The return type is String.
-  print(bar); // Bar!
-
-  // .read(bazProvider) returns Future<String>.
-  providerContainer.read(bazProvider).when(
-        data: (data) {
-          // TODO: Not called. Check why.
-          print(data);
-        },
-        error: (err, stack) => print(err.toString() + stack.toString()),
-        loading: () => print('Loading!'),
-      );
+  final hello3 = providerContainer
+      .read(myGenerated2Provider('Jane')); // The return type is String.
+  print(hello3); // Hello!
 }
