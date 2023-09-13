@@ -3,17 +3,30 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'main.g.dart';
 
-final greetProvider = Provider((ref) => 'Hello');
+final fooProvider = Provider((ref) => 'Foo!');
 
 @riverpod
-String farewell(FarewellRef ref) => 'Bye';
+String bar(BarRef ref) => 'Bar!';
 
-void main() {
+@riverpod
+Future<String> baz(BazRef ref) async => 'Baz!';
+
+void main() async {
   final providerContainer = ProviderContainer();
 
-  final hello = providerContainer.read(greetProvider);
-  print(hello); // Hello
+  final foo = providerContainer.read(fooProvider); // The return type is String.
+  print(foo); // Foo!
 
-  final bye = providerContainer.read(farewellProvider);
-  print(bye); // Bye
+  final bar = providerContainer.read(barProvider); // The return type is String.
+  print(bar); // Bar!
+
+  // .read(bazProvider) returns Future<String>.
+  providerContainer.read(bazProvider).when(
+        data: (data) {
+          // TODO: Not called. Check why.
+          print(data);
+        },
+        error: (err, stack) => print(err.toString() + stack.toString()),
+        loading: () => print('Loading!'),
+      );
 }
