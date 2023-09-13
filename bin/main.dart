@@ -3,45 +3,42 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'main.g.dart';
 
-final myProvider1 = Provider.autoDispose((ref) => 'Hello!');
-final myProvider2 =
+final myParameterlessProvider = Provider.autoDispose((ref) => 'Hello!');
+final mySingleParameterProvider =
     Provider.autoDispose.family<String, String>((ref, name) => 'Hello, $name!');
 
 @riverpod
-String myGenerated1(MyGenerated1Ref ref) => 'Hello!';
+String myGeneratedParameterless(MyGeneratedParameterlessRef ref) => 'Hello!';
 
 @riverpod
-String myGenerated2(MyGenerated2Ref ref, String firstName) =>
+String myGeneratedRequiredParameter(
+  MyGeneratedRequiredParameterRef ref,
+  String firstName,
+) =>
     'Hello, $firstName!';
 
 @riverpod
-String myGenerated3(MyGenerated3Ref ref, [String firstName1 = 'Anonymous']) =>
-    'Hello, $firstName1!';
+String myGeneratedOptionalParameter(
+  MyGeneratedOptionalParameterRef ref, [
+  String firstName = 'Anonymous',
+]) =>
+    'Hello, $firstName!';
 
 void main() async {
   final providerContainer = ProviderContainer();
 
-  final hello =
-      providerContainer.read(myProvider1); // The return type is String.
-  print(hello); // Hello!
-
-  final helloAlice = providerContainer
-      .read(myProvider2('Minnie')); // The return type is String.
-  print(helloAlice); // Hello, Minnie!
-
-  final hello2 = providerContainer
-      .read(myGenerated1Provider); // The return type is String.
-  print(hello2); // Hello!
-
-  final hello3 = providerContainer
-      .read(myGenerated2Provider('Mickey')); // The return type is String.
-  print(hello3); // Hello, Mickey!
-
-  final hello4 = providerContainer
-      .read(myGenerated3Provider()); // The return type is String.
-  print(hello4); // Hello, Anonymous!
-
-  final hello5 = providerContainer
-      .read(myGenerated3Provider('Donald')); // The return type is String.
-  print(hello5); // Hello, Donald!
+  print(providerContainer.read(myParameterlessProvider)); // Hello!
+  print(
+    providerContainer.read(mySingleParameterProvider('Minnie')),
+  ); // Hello, Minnie!
+  print(providerContainer.read(myGeneratedParameterlessProvider)); // Hello!
+  print(
+    providerContainer.read(myGeneratedRequiredParameterProvider('Mickey')),
+  ); // Hello, Mickey!
+  print(
+    providerContainer.read(myGeneratedOptionalParameterProvider()),
+  ); // Hello, Anonymous!
+  print(
+    providerContainer.read(myGeneratedOptionalParameterProvider('Donald')),
+  ); // Hello, Donald!
 }
