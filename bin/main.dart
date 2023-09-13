@@ -3,7 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'main.g.dart';
 
-final fooProvider = Provider((ref) => 'Foo!');
+final fooProvider = Provider.autoDispose((ref) => 'Foo!');
 
 @riverpod
 String bar(BarRef ref) => 'Bar!';
