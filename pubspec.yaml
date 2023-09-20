@@ -2,6 +2,7 @@ name: dart_playground
 environment:
   sdk: '^3.1.0'
 dependencies:
+  collection: any
   riverpod: any
   riverpod_annotation: any
 dev_dependencies:
