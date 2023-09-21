@@ -40,6 +40,20 @@ class MyBool extends _$MyBool {
   }
 }
 
+@riverpod
+class MySet extends _$MySet {
+  @override
+  Set<String> build() => {};
+
+  void add(String s) {
+    state = {...state, s};
+  }
+
+  void remove(String s) {
+    state.remove(s);
+  }
+}
+
 void showGeneratedFunctionProviderExamples() {
   final providerContainer = ProviderContainer();
   print(providerContainer.read(myGeneratedParameterlessProvider)); // Hello!
@@ -58,9 +72,19 @@ void showGeneratedFunctionProviderExamples() {
   ); // Hello, Donald!
 }
 
-void showGeneratedClassProviderExamples() {
+void showGeneratedBoolNotifirerProviderExamples() {
   final providerContainer = ProviderContainer();
   print(providerContainer.read(myBoolProvider)); // false
   providerContainer.read(myBoolProvider.notifier).toggle();
   print(providerContainer.read(myBoolProvider)); // true
+}
+
+void showGeneratedSetNotifirerProviderExamples() {
+  final providerContainer = ProviderContainer();
+  print(providerContainer.read(mySetProvider)); // {}
+  providerContainer.read(mySetProvider.notifier).add('a');
+  print(providerContainer.read(mySetProvider)); // {'a'}
+  providerContainer.read(mySetProvider.notifier).add('b');
+  providerContainer.read(mySetProvider.notifier).remove('a');
+  print(providerContainer.read(mySetProvider)); // {'b'}
 }
