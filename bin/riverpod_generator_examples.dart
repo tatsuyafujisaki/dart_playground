@@ -40,7 +40,7 @@ class MyBool extends _$MyBool {
   }
 }
 
-Future<void> showGeneratedProviderExamples() async {
+void showGeneratedFunctionProviderExamples() {
   final providerContainer = ProviderContainer();
   print(providerContainer.read(myGeneratedParameterlessProvider)); // Hello!
   print(
