@@ -1,3 +1,1 @@
-void main() async {
-  print('');
-}
+void main() async {}
