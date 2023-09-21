@@ -5,6 +5,7 @@ final mySingleParameterProvider =
     Provider.autoDispose.family<String, String>((ref, name) => 'Hello, $name!');
 
 final myStateProvider = StateProvider.autoDispose((_) => false);
+final mySetStateProvider = StateProvider.autoDispose((_) => <int>{});
 
 void showProviderExamples() {
   final providerContainer = ProviderContainer();
@@ -19,4 +20,11 @@ void showStateProviderExamples() {
   print(providerContainer.read(myStateProvider));
   providerContainer.read(myStateProvider.notifier).update((state) => !state);
   print(providerContainer.read(myStateProvider));
+}
+
+void showSetStateProviderExamples() {
+  final providerContainer = ProviderContainer();
+  print(providerContainer.read(mySetStateProvider));
+  providerContainer.read(mySetStateProvider.notifier).update((state) => {1, 2});
+  print(providerContainer.read(mySetStateProvider));
 }
