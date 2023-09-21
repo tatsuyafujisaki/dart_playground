@@ -6,6 +6,7 @@ final mySingleParameterProvider =
 
 final myStateProvider = StateProvider.autoDispose((_) => false);
 final mySetStateProvider = StateProvider.autoDispose((_) => <int>{});
+final myMapStateProvider = StateProvider.autoDispose((_) => <String, bool>{});
 
 void showProviderExamples() {
   final providerContainer = ProviderContainer();
@@ -31,4 +32,18 @@ void showSetStateProviderExamples() {
       .read(mySetStateProvider.notifier)
       .update((state) => {...state, 3, 4});
   print(providerContainer.read(mySetStateProvider)); // {1, 2, 3, 4}
+}
+
+void showMapStateProviderExamples() {
+  final providerContainer = ProviderContainer();
+  print(providerContainer.read(myMapStateProvider)); // {}
+  providerContainer
+      .read(myMapStateProvider.notifier)
+      .update((state) => {'foo': false, 'bar': false});
+  print(providerContainer.read(myMapStateProvider)); // {foo: false, bar: false}
+  providerContainer.read(myMapStateProvider.notifier).update((state) {
+    state['bar'] = true;
+    return state;
+  });
+  print(providerContainer.read(myMapStateProvider)); // {foo: false, bar: true}
 }
