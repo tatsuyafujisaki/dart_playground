@@ -40,7 +40,7 @@ class MyBool extends _$MyBool {
   }
 }
 
-Future<void> _examples() async {
+Future<void> showGeneratedProviderExamples() async {
   final providerContainer = ProviderContainer();
   print(providerContainer.read(myGeneratedParameterlessProvider)); // Hello!
   print(
@@ -58,7 +58,9 @@ Future<void> _examples() async {
   ); // Hello, Donald!
 }
 
-Future<void> _classExamples() async {
+void showGeneratedClassProviderExamples() {
   final providerContainer = ProviderContainer();
+  print(providerContainer.read(myBoolProvider)); // false
   providerContainer.read(myBoolProvider.notifier).toggle();
+  print(providerContainer.read(myBoolProvider)); // true
 }
