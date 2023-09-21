@@ -3,6 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'riverpod_generator_examples.g.dart';
 
+/// Generates AutoDisposeProvider<bool>
 @riverpod
 String myGeneratedParameterless(MyGeneratedParameterlessRef ref) => 'Hello!';
 
@@ -28,6 +29,17 @@ String myGeneratedRequiredParameters(
 ) =>
     'Hello, $age-year-old $name1!';
 
+/// Generates AutoDisposeNotifierProviderImpl<MyBool, bool>
+@riverpod
+class MyBool extends _$MyBool {
+  @override
+  bool build() => false;
+
+  void toggle() {
+    state = !state;
+  }
+}
+
 Future<void> _examples() async {
   final providerContainer = ProviderContainer();
   print(providerContainer.read(myGeneratedParameterlessProvider)); // Hello!
@@ -44,4 +56,9 @@ Future<void> _examples() async {
   print(
     providerContainer.read(myGeneratedRequiredParametersProvider('Goofy', 18)),
   ); // Hello, Donald!
+}
+
+Future<void> _classExamples() async {
+  final providerContainer = ProviderContainer();
+  providerContainer.read(myBoolProvider.notifier).toggle();
 }
