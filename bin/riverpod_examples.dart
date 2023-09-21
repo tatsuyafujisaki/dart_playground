@@ -24,7 +24,11 @@ void showStateProviderExamples() {
 
 void showSetStateProviderExamples() {
   final providerContainer = ProviderContainer();
-  print(providerContainer.read(mySetStateProvider));
+  print(providerContainer.read(mySetStateProvider)); // {}
   providerContainer.read(mySetStateProvider.notifier).update((state) => {1, 2});
-  print(providerContainer.read(mySetStateProvider));
+  print(providerContainer.read(mySetStateProvider)); // {1, 2}
+  providerContainer
+      .read(mySetStateProvider.notifier)
+      .update((state) => {...state, 3, 4});
+  print(providerContainer.read(mySetStateProvider)); // {1, 2, 3, 4}
 }
