@@ -8,6 +8,6 @@ import 'package:intl/intl.dart';
 /// convertDateTimeToString(newPattern: 'MM-dd-yyyy') // today in MM-dd-yyyy
 String convertDateTimeToString({
   DateTime? dateTime,
-  String newPattern = 'yyyy-MM-dd',
+  String newPattern = 'yyyy-MM-dd hh:mm:ss',
 }) =>
     DateFormat(newPattern).format(dateTime ?? DateTime.now());
