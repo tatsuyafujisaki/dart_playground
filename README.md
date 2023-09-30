@@ -1,6 +1,20 @@
 # Riverpod
 [riverpod.md](markdown/riverpod.md)
 
+# Example of the `??=` operator
+```dart
+void main() {
+  String? a = 'a';
+  String? b = null;
+
+  a ??= 'c'; // 'c' will not be assigned to a because a is not null.
+  b ??= 'c'; // 'c' will be assigned to b because b is null. 
+  
+  print(a); // a
+  print(b); // c
+}
+```
+
 # Function
 ## Function with required and optional positional (i.e. unnamed) parameters (= parameters in square brackets)
 ```dart
