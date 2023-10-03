@@ -94,20 +94,6 @@ void main() {
 }
 ```
 
-# flutter doctor
-## What if `flutter doctor` fails for the Android toolchain?
-Run the following.
-```shell
-ln -s "/Applications/Android Studio.app" ~/Applications
-```
-
-## What if `flutter doctor` fails for Android Studio?
-Run the following.
-```shell
-cd /Applications/Android Studio.app/Contents
-ln -s jbr jre
-```
-
 ## Can a function have both optional positional and named parameters?
 No.
 
