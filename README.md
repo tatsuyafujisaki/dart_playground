@@ -1,3 +1,6 @@
+# Best practices
+[best-practices.md](markdown/best-practices.md)
+
 # Riverpod
 [riverpod.md](markdown/riverpod.md)
 
@@ -15,8 +18,8 @@ void main() {
   String? b = null;
 
   a ??= 'c'; // 'c' will not be assigned to a because a is not null.
-  b ??= 'c'; // 'c' will be assigned to b because b is null. 
-  
+  b ??= 'c'; // 'c' will be assigned to b because b is null.
+
   print(a); // a
   print(b); // c
 }
