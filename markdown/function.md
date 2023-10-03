@@ -31,11 +31,11 @@ void main() {
 # `Function` versus `Function()`
 ```dart
 // "Function()" is a parameterless function.
-Function() greet = () => print('Hello!');
+void Function() greet = () => print('Hello!');
 
 // "Function" is any function, regardless of how many parameters it takes.
 Function greetFullname =
-    (firstName, lastName) => print('Hello $firstName $lastName');
+    (String firstName, String lastName) => print('Hello $firstName $lastName');
 
 void main() {
   greet();
