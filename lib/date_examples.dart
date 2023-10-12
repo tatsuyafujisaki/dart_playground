@@ -10,15 +10,17 @@ Future<void> dateFormatExample() async {
 
   print('--');
 
-  await initializeDateFormatting('ja').then((_) {
-    print(DateFormat.MMMEd('ja').format(date)); // MM月dd日(E)
-    print(DateFormat.yMMMEd('ja').format(date)); // yyyy年MM月dd日(E)
-    print(
-      DateFormat('yyyy年MM月dd日(E)', 'ja')
-          .format(date), // yyyy年MM月dd日(E) (same as above)
-    );
-    print(DateFormat.Md('ja').format(date)); // MM/dd
-    print(DateFormat.MEd('ja').format(date)); // MM/dd(E)
-    print(DateFormat.yMEd('ja').format(date)); // yyyy/MM/dd(E)
-  });
+  await initializeDateFormatting('ja').then(
+    (_) {
+      print(DateFormat.MMMEd('ja').format(date)); // MM月dd日(E)
+      print(DateFormat.yMMMEd('ja').format(date)); // yyyy年MM月dd日(E)
+      print(
+        DateFormat('yyyy年MM月dd日(E)', 'ja')
+            .format(date), // yyyy年MM月dd日(E) (same as above)
+      );
+      print(DateFormat.Md('ja').format(date)); // MM/dd
+      print(DateFormat.MEd('ja').format(date)); // MM/dd(E)
+      print(DateFormat.yMEd('ja').format(date)); // yyyy/MM/dd(E)
+    },
+  );
 }
