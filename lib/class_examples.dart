@@ -8,7 +8,7 @@ class Person {
 }
 
 void main() {
-  final person = Person(firstName: 'Christopher', lastName: 'Robin');
+  final person = Person(firstName: 'Mike', lastName: 'Wazowski');
   print(person.firstName);
   print(person.lastName);
   print(person.fullName);
