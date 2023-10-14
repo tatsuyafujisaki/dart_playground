@@ -12,7 +12,7 @@ class Person {
 
 void main() {
   final person =
-      Person(firstName: 'Mike', middleName: 'bbb', lastName: 'Wazowski');
+      Person(firstName: 'Christopher', middleName: 'Robin', lastName: 'Milne');
   print(person.firstName);
   print(person.lastName);
   print(person.fullName);
