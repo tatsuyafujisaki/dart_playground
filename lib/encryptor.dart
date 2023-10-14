@@ -10,7 +10,7 @@ class Encryptor {
   String decrypt(String encrypted) => _encryptor.decrypt64(encrypted, iv: _iv);
 }
 
-void encryptorExample([String input = 'Hello!']) {
+void showEncryptorExample([String input = 'Hello!']) {
   final encryptor = Encryptor();
   final encrypted = encryptor.encrypt('Hello!');
   final decrypted = encryptor.decrypt(encrypted);
