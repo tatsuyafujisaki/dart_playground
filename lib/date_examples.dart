@@ -1,7 +1,7 @@
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 
-Future<void> dateFormatExample() async {
+Future<void> _dateFormatExample() async {
   final date = DateTime.now();
 
   print(
@@ -23,4 +23,8 @@ Future<void> dateFormatExample() async {
       print(DateFormat.yMEd('ja').format(date)); // yyyy/MM/dd(E)
     },
   );
+}
+
+void main() async {
+  await _dateFormatExample();
 }
