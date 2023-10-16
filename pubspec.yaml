@@ -4,6 +4,7 @@ environment:
 dependencies:
   collection: any
   encrypt: any
+  freezed: any
   intl: any
   riverpod: any
   riverpod_annotation: any
