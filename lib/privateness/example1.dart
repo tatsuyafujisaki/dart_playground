@@ -1,7 +1,7 @@
 final _myTopPrivateLevelVariable = '_myTopPrivateLevelVariable';
 final myTopLevelPublicVariable = 'myTopLevelPublicVariable';
 
-class MyClass {
+class MyPublic {
   final _myPrivateVariable = '_myPrivateVariable';
   final myPublicVariable = 'myPublicVariable';
 
@@ -14,16 +14,24 @@ class MyClass {
   }
 }
 
+class _MyPrivate {}
+
 void main() {
   // Top-level private variables are only accessible from within the same file.
   print(_myTopPrivateLevelVariable);
   print(myTopLevelPublicVariable);
 
-  final myClass = MyClass();
-  // Private  variables can only be accessed from the same file.
-  print(myClass._myPrivateVariable);
-  print(myClass.myPublicVariable);
-  myClass
+  final myPublic = MyPublic();
+  // Private instance variables can only be accessed from the same file.
+  print(myPublic._myPrivateVariable);
+
+  print(myPublic.myPublicVariable);
+  // Private instance methods can only be accessed from the same file.
+  myPublic
     .._myPrivateMethod()
     ..myPublicMethod();
+
+  // Private classes can only be accessed from the same file.
+  final myPrivate = _MyPrivate();
+  print(myPrivate);
 }
