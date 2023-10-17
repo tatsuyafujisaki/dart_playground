@@ -1,5 +1,5 @@
-class Person {
-  Person({
+class _Person {
+  _Person({
     required this.firstName,
     required String middleName,
     required this.lastName,
@@ -12,7 +12,7 @@ class Person {
 
 void main() {
   final person =
-      Person(firstName: 'Christopher', middleName: 'Robin', lastName: 'Milne');
+      _Person(firstName: 'Christopher', middleName: 'Robin', lastName: 'Milne');
   print(person.firstName);
   print(person.lastName);
   print(person.fullName);
