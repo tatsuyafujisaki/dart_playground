@@ -7,6 +7,9 @@
 # Riverpod
 [riverpod.md](markdown/riverpod.md)
 
+# CocoaPods
+[cocoa-pods.md](markdown/cocoa-pods.md)
+
 # Division, quotient, and remainder
 ```dart
 print(10 / 3); // 3.33..
@@ -69,20 +72,9 @@ void main() {
 }
 ```
 
-## Can a function have both optional positional and named parameters?
-No.
-
-> A function can’t have both optional positional and named parameters.
-
-https://dart.dev/codelabs/dart-cheatsheet#named-parameters
-
-# Cocoapods
-## How to install the specific version of Cocoapods
-```shell
-sudo gem install cocoapods --version <verison>
-```
-
-## How to show the installed version of Cocoapods
-```shell
-sudo gem list cocoapods
+# How to convert `List<dynamic>` to `List<String>`
+Use the [cast\<R>](https://api.flutter.dev/flutter/dart-core/List/cast.html) method.
+```dart
+final xs = <dynamic>['a', 'b', 'c'];
+final ys = xs.cast<String>();
 ```

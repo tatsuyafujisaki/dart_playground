@@ -42,3 +42,10 @@ void main() {
   greetFullname('Christopher', 'Robin');
 }
 ```
+
+# Can a function have both optional positional and named parameters?
+No.
+
+> A function can’t have both optional positional and named parameters.
+
+https://dart.dev/codelabs/dart-cheatsheet#named-parameters
