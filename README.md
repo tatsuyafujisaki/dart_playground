@@ -4,6 +4,9 @@
 # Function
 [function.md](markdown/function.md)
 
+# Asynchronous
+[asynchronous.md](markdown/asynchronous.md)
+
 # Riverpod
 [riverpod.md](markdown/riverpod.md)
 
