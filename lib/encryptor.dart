@@ -1,19 +1,20 @@
 import 'package:encrypt/encrypt.dart';
 
 class Encryptor {
-  final Encrypter _encryptor = Encrypter(
+  static final _encryptor = Encrypter(
     AES(Key.fromBase64('wnhXiuxpZa8Aqm5yTWPAvJ660ZKJV6rDH3eVAfKFz/U=')),
   );
-  final _iv = IV.fromLength(16);
+  static final _iv = IV.fromLength(16);
 
-  String encrypt(String input) => _encryptor.encrypt(input, iv: _iv).base64;
-  String decrypt(String encrypted) => _encryptor.decrypt64(encrypted, iv: _iv);
+  static String encrypt(String input) =>
+      _encryptor.encrypt(input, iv: _iv).base64;
+  static String decrypt(String encrypted) =>
+      _encryptor.decrypt64(encrypted, iv: _iv);
 }
 
 void main() {
-  final encryptor = Encryptor();
-  final encrypted = encryptor.encrypt('Hello!');
-  final decrypted = encryptor.decrypt(encrypted);
+  final encrypted = Encryptor.encrypt('Hello!');
+  final decrypted = Encryptor.decrypt(encrypted);
   print('encrypted: $encrypted');
   print('decrypted: $decrypted');
 }
