@@ -5,3 +5,6 @@
 # Which type of provider to choose?
 - is the wrong question. `@riverpod` will chooses the right type of provider for you.
   - https://youtu.be/BJtQ0dfI-RA?t=1172
+
+# What is the difference between `Ref.invalidate` and `Ref.refresh`?
+https://pub.dev/documentation/riverpod/latest/riverpod/Ref/refresh.html
