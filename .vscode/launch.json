@@ -6,6 +6,7 @@
       "request": "launch",
       "toolArgs": [
         "--define=FLAVOR=FLAVOR1",
+        "--define=MY_VAR=MY_KEY1",
       ]
     },
     {
@@ -14,6 +15,7 @@
       "request": "launch",
       "toolArgs": [
         "--define=FLAVOR=FLAVOR2",
+        "--define=MY_VAR=MY_KEY2",
       ]
     }
   ]
