@@ -5,7 +5,7 @@
       "type": "dart",
       "request": "launch",
       "toolArgs": [
-        "--defineFLAVOR=FLAVOR1",
+        "--define=FLAVOR=FLAVOR1",
       ]
     },
     {
