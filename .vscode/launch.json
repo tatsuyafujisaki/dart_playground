@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "name": "Flavor 1",
+      "type": "dart",
+      "request": "launch",
+      "toolArgs": [
+        "--defineFLAVOR=FLAVOR1",
+      ]
+    },
+    {
+      "name": "Flavor 2",
+      "type": "dart",
+      "request": "launch",
+      "toolArgs": [
+        "--define=FLAVOR=FLAVOR2",
+      ]
+    }
+  ]
+}

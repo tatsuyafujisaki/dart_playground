@@ -1,3 +1,3 @@
 void main() {
-  print('Hello World!');
+  print(const String.fromEnvironment('FLAVOR'));
 }
