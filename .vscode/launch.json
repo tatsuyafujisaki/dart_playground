@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "name": "Flavor 1",
+      "name": "Configuration 1",
       "type": "dart",
       "request": "launch",
       "toolArgs": [
@@ -10,7 +10,7 @@
       ]
     },
     {
-      "name": "Flavor 2",
+      "name": "Configuration 2",
       "type": "dart",
       "request": "launch",
       "toolArgs": [
