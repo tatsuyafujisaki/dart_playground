@@ -5,8 +5,8 @@
       "type": "dart",
       "request": "launch",
       "toolArgs": [
-        "--define=FLAVOR=FLAVOR1",
-        "--define=MY_VAR=MY_KEY1",
+        "--define=MY_VAR1=MY_KEY1",
+        "--define=MY_VAR2=MY_KEY2",
       ]
     },
     {
@@ -14,8 +14,8 @@
       "type": "dart",
       "request": "launch",
       "toolArgs": [
-        "--define=FLAVOR=FLAVOR2",
-        "--define=MY_VAR=MY_KEY2",
+        "--define=MY_VAR1=MY_KEY1",
+        "--define=MY_VAR2=MY_KEY2",
       ]
     }
   ]
