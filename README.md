@@ -34,44 +34,73 @@ void main() {
 }
 ```
 
-# Class
-## Class with required and optional unnamed (aka positional) parameters (= parameters in square brackets)
+# Required parameter / optional parameter / named parameter / unnamed (aka positional) parameter
+## Example of unnamed (aka positional) parameters
 ```dart
 // a ia a required unnamed parameter.
-// b is an optional unnamed parameter whose default value is null.
-// c is an optional unnamed parameter with a default value.
+// b is an optional unnamed (aka positional) parameter whose default value is null.
+// c is an optional unnamed (aka positional) parameter with a default value.
 class MyClass {
+  MyClass(this.a, [this.b, this.c = 'default!']) {
+    print('a = $a, b = $b, c = $c');
+  }
   String a;
   String? b;
   String c;
+}
 
-  MyClass(this.a, [this.b, this.c = 'c']);
+void myFunction(
+  String a, [
+  String? b,
+  String c = 'default!',
+]) {
+  print('a = $a, b = $b, c = $c');
 }
 
 void main() {
-  final myClass1 = MyClass('a');
-  final myClass2 = MyClass('a', 'b');
-  final myClass3 = MyClass('a', 'b', 'c');
+  MyClass('a');
+  MyClass('a', 'b');
+  MyClass('a', 'b', 'c');
+
+  myFunction('a');
+  myFunction('a', 'b');
+  myFunction('a', 'b', 'c');
 }
 ```
 
-## Class with required and optional named parameters (= parameters in square brackets)
+## Example of named parameters
 ```dart
-// a ia a required named parameter.
-// b is an optional named parameter whose default value is null.
-// c is an optional named parameter with a default value.
+// a ia a required unnamed parameter.
+// b ia a required named parameter.
+// c is an optional named parameter whose default value is null.
+// d is an optional named parameter with a default value.
 class MyClass {
+  MyClass(this.a, {required this.b, this.c, this.d = 'default!'}) {
+    print('a = $a, b = $b, c = $c, d = $d');
+  }
   String a;
-  String? b;
-  String c;
+  String b;
+  String? c;
+  String d;
+}
 
-  MyClass(this.a, {this.b, this.c = 'c'});
+void myFunction(
+  String a, {
+  required String b,
+  String? c,
+  String d = 'default!',
+}) {
+  print('a = $a, b = $b, c = $c, d = $d');
 }
 
 void main() {
-  final myClass1 = MyClass('a');
-  final myClass2 = MyClass('a', b: 'b');
-  final myClass3 = MyClass('a', b: 'b', c: 'c');
+  MyClass('a', b: 'b');
+  MyClass('a', b: 'b', c: 'c');
+  MyClass('a', b: 'b', c: 'c', d: 'd');
+
+  myFunction('a', b: 'b');
+  myFunction('a', b: 'b', c: 'c');
+  myFunction('a', b: 'b', c: 'c', d: 'd');
 }
 ```
 
