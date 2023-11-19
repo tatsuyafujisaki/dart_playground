@@ -8,3 +8,12 @@
 
 # What is the difference between `Ref.invalidate` and `Ref.refresh`?
 https://pub.dev/documentation/riverpod/latest/riverpod/Ref/refresh.html
+
+# Riverpod best practices
+> Whenever possible, prefer using ref.watch over ref.read or ref.listen to implement a feature.
+
+https://docs-v2.riverpod.dev/docs/concepts/reading
+
+> Do not use multiple ProviderContainers, without an understanding of how they work.
+
+https://docs-v2.riverpod.dev/docs/concepts/scopes
