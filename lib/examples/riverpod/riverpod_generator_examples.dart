@@ -10,24 +10,24 @@ String myGeneratedParameterless(MyGeneratedParameterlessRef ref) => 'Hello!';
 @riverpod
 String myGeneratedRequiredParameter(
   MyGeneratedRequiredParameterRef ref,
-  String name1,
+  String name,
 ) =>
-    'Hello, $name1!';
+    'Hello, $name!';
 
 @riverpod
 String myGeneratedOptionalParameter(
   MyGeneratedOptionalParameterRef ref, [
-  String name1 = 'Anonymous',
+  String name = 'Anonymous',
 ]) =>
-    'Hello, $name1!';
+    'Hello, $name!';
 
 @riverpod
 String myGeneratedRequiredParameters(
   MyGeneratedRequiredParametersRef ref,
-  String name1,
+  String name,
   int age,
 ) =>
-    'Hello, $age-year-old $name1!';
+    'Hello, $age-year-old $name!';
 
 /// Generates AutoDisposeNotifierProviderImpl<MyBool, bool>
 @riverpod
