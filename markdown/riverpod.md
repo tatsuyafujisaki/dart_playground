@@ -12,6 +12,6 @@ https://pub.dev/documentation/riverpod/latest/riverpod/Ref/refresh.html
 # Riverpod best practices
 - https://docs-v2.riverpod.dev/docs/concepts/reading
   - > NOTE: Whenever possible, prefer using ref.watch over ref.read or ref.listen to implement a feature.
-  - > WARNING: The watch method should not be called asynchronously, like inside an onPressed of an ElevatedButton.
+  - > WARNING: The `watch` method should not be called asynchronously, like inside an onPressed of an ElevatedButton. The watch method should not be called asynchronously, like inside an onPressed of an ElevatedButton. Nor should it be used inside `initState` and other State life-cycles. In those cases, consider using `ref.read` instead.
 - https://docs-v2.riverpod.dev/docs/concepts/scopes
   - > DANGER: Do not use multiple ProviderContainers, without an understanding of how they work.
