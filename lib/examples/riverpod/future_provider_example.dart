@@ -20,7 +20,7 @@ Future<void> _debugFutureProvider(
 ) async {
   final container = ProviderContainer();
 
-  final asyncValue = container.read(futureProvider) // AsyncValue<String>
+  final asyncValue = container.read(futureProvider)
     ..when(
       data: (data) => print('data: $data'),
       error: (error, _) => print('error: $error'),

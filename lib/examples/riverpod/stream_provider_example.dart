@@ -10,13 +10,13 @@ final _streamProvider = StreamProvider.autoDispose<String>(
 void main() async {
   final container = ProviderContainer();
 
-  final asyncValueInt = container.read(_streamProvider) // AsyncValue<String>
+  final asyncValue = container.read(_streamProvider)
     ..when(
       data: (data) => print('data: $data'),
       error: (error, _) => print('error: $error'),
       loading: () => print('loading'),
     );
-  print(asyncValueInt); // AsyncLoading<String>()
+  print(asyncValue); // AsyncLoading<String>()
 
   try {
     final future = container.read(_streamProvider.future); // Future<String>
