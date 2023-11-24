@@ -21,16 +21,16 @@ void main() async {
   await _showExamples(_errorFutureProvider2);
 }
 
-Future<void> _showExamples(
-  AutoDisposeFutureProvider<String> futureProvider,
+Future<void> _showExamples<T>(
+  AutoDisposeFutureProvider<T> futureProvider,
 ) async {
   await _whenExample(futureProvider);
   await _futureExample(futureProvider);
   await _listenExample(futureProvider);
 }
 
-Future<void> _whenExample(
-  AutoDisposeFutureProvider<String> futureProvider,
+Future<void> _whenExample<T>(
+  AutoDisposeFutureProvider<T> futureProvider,
 ) async {
   ProviderContainer().read(futureProvider).when(
         data: (data) => print('AsyncData: $data'),
@@ -39,8 +39,8 @@ Future<void> _whenExample(
       );
 }
 
-Future<void> _futureExample(
-  AutoDisposeFutureProvider<String> futureProvider,
+Future<void> _futureExample<T>(
+  AutoDisposeFutureProvider<T> futureProvider,
 ) async {
   try {
     final future = ProviderContainer().read(futureProvider.future);
@@ -50,8 +50,8 @@ Future<void> _futureExample(
   }
 }
 
-Future<void> _listenExample(
-  AutoDisposeFutureProvider<String> futureProvider,
+Future<void> _listenExample<T>(
+  AutoDisposeFutureProvider<T> futureProvider,
 ) async {
   ProviderContainer().listen(
     futureProvider,
