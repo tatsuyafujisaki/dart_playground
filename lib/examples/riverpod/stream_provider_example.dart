@@ -10,8 +10,8 @@ void main() async {
   final asyncValueInt = container.read(_streamProvider) // AsyncValue<int>
     ..when(
       data: (data) => print('data: $data'),
-      loading: () => print('loading'),
       error: (error, stackTrace) => print(error),
+      loading: () => print('loading'),
     );
   print(asyncValueInt); // AsyncLoading<int>()
 
