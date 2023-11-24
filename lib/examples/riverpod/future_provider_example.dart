@@ -1,8 +1,6 @@
 import 'package:riverpod/riverpod.dart';
 
-final _futureProvider = FutureProvider<String>(
-  (_) => Future.delayed(Duration(seconds: 1), () => 'Hello'),
-);
+final _futureProvider = FutureProvider<String>((_) => Future.value('Hello'));
 
 void main() async {
   final container = ProviderContainer();
