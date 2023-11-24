@@ -13,14 +13,6 @@ final _errorFutureProvider1 =
 final _errorFutureProvider2 =
     FutureProvider.autoDispose<String>((_) => throw Exception());
 
-void main() async {
-  await _showExamples(_futureProvider);
-  print('--');
-  await _showExamples(_errorFutureProvider1);
-  print('--');
-  await _showExamples(_errorFutureProvider2);
-}
-
 Future<void> _showExamples<T>(
   AutoDisposeFutureProvider<T> futureProvider,
 ) async {
@@ -59,4 +51,12 @@ Future<void> _listenExample<T>(
       print('previous: $previous, next: $next');
     },
   );
+}
+
+void main() async {
+  await _showExamples(_futureProvider);
+  print('--');
+  await _showExamples(_errorFutureProvider1);
+  print('--');
+  await _showExamples(_errorFutureProvider2);
 }

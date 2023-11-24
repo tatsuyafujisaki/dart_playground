@@ -7,28 +7,42 @@ final _streamProvider = StreamProvider.autoDispose<String>(
   ),
 );
 
-void main() async {
-  final container = ProviderContainer();
+Future<void> _whenExample<T>(
+  AutoDisposeStreamProvider<T> streamProvider,
+) async {
+  ProviderContainer().read(streamProvider).when(
+        data: (data) => print('AsyncData: $data'),
+        error: (error, _) => print('AsyncError: $error'),
+        loading: () => print('AsyncLoading'),
+      );
+}
 
-  final asyncValue = container.read(_streamProvider)
-    ..when(
-      data: (data) => print('AsyncData: $data'),
-      error: (error, _) => print('AsyncError: $error'),
-      loading: () => print('AsyncLoading'),
-    );
-  print('AsyncValue: $asyncValue');
-
+Future<void> _futureExample<T>(
+  AutoDisposeStreamProvider<T> streamProvider,
+) async {
   try {
-    final future = container.read(_streamProvider.future); // Future<String>
-    print('awaited future: ${await future}'); // '0'
+    final future = ProviderContainer().read(streamProvider.future);
+    print('awaited future: ${await future}');
   } catch (e) {
     print('awaited future error: $e');
   }
+}
 
-  container.listen(
-    _streamProvider,
+Future<void> _listenExample<T>(
+  AutoDisposeStreamProvider<T> streamProvider,
+) async {
+  ProviderContainer().listen(
+    streamProvider,
     (previous, next) {
       print('previous: $previous, next: $next');
     },
   );
+}
+
+void main() async {
+  await _whenExample(_streamProvider);
+  print('--');
+  await _futureExample(_streamProvider);
+  print('--');
+  await _listenExample(_streamProvider);
 }
