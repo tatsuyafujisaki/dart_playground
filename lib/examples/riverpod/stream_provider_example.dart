@@ -1,7 +1,10 @@
 import 'package:riverpod/riverpod.dart';
 
-final _streamProvider = StreamProvider<int>(
-  (_) => Stream.periodic(Duration(seconds: 1), (count) => count),
+final _streamProvider = StreamProvider.autoDispose<int>(
+  (_) => Stream.periodic(
+    Duration(seconds: 1),
+    (count) => (count < 3) ? count : throw Exception(),
+  ),
 );
 
 void main() async {
@@ -10,13 +13,17 @@ void main() async {
   final asyncValueInt = container.read(_streamProvider) // AsyncValue<int>
     ..when(
       data: (data) => print('data: $data'),
-      error: (error, stackTrace) => print(error),
+      error: (error, _) => print('error: $error'),
       loading: () => print('loading'),
     );
   print(asyncValueInt); // AsyncLoading<int>()
 
-  final futureInt = container.read(_streamProvider.future); // Future<int>
-  print('futureInt: ${await futureInt}  '); // 0
+  try {
+    final future = container.read(_streamProvider.future); // Future<int>
+    print('awaited future: ${await future}'); // 0
+  } catch (e) {
+    print('awaited future error: $e');
+  }
 
   container.listen(
     _streamProvider,
