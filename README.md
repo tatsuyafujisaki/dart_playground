@@ -2,7 +2,7 @@
 [best-practices.md](markdown/best-practices.md)
 
 # Lint
-#[lint.md](markdown/lint.md)
+[lint.md](markdown/lint.md)
 
 # Function
 [function.md](markdown/function.md)
