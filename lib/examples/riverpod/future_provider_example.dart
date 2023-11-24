@@ -14,30 +14,49 @@ final _errorFutureProvider2 =
     FutureProvider.autoDispose<String>((_) => throw Exception());
 
 void main() async {
-  await _debugFutureProvider(_futureProvider);
+  await _showExamples(_futureProvider);
   print('--');
-  await _debugFutureProvider(_errorFutureProvider1);
+  await _showExamples(_errorFutureProvider1);
   print('--');
-  await _debugFutureProvider(_errorFutureProvider2);
+  await _showExamples(_errorFutureProvider2);
 }
 
-Future<void> _debugFutureProvider(
+Future<void> _showExamples(
   AutoDisposeFutureProvider<String> futureProvider,
 ) async {
-  final container = ProviderContainer();
+  await _whenExample(futureProvider);
+  await _futureExample(futureProvider);
+  await _listenExample(futureProvider);
+}
 
-  container
-      .read(futureProvider) // AsyncValue<String>
-      .when(
+Future<void> _whenExample(
+  AutoDisposeFutureProvider<String> futureProvider,
+) async {
+  ProviderContainer().read(futureProvider).when(
         data: (data) => print('AsyncData: $data'),
         error: (error, _) => print('AsyncError: $error'),
         loading: () => print('AsyncLoading'),
       );
+}
 
+Future<void> _futureExample(
+  AutoDisposeFutureProvider<String> futureProvider,
+) async {
   try {
-    final future = container.read(futureProvider.future); // Future<String>
+    final future = ProviderContainer().read(futureProvider.future);
     print('awaited future: ${await future}');
   } catch (e) {
-    print('awaited future error: $e'); // awaited future error: Exception
+    print('awaited future error: $e');
   }
+}
+
+Future<void> _listenExample(
+  AutoDisposeFutureProvider<String> futureProvider,
+) async {
+  ProviderContainer().listen(
+    futureProvider,
+    (previous, next) {
+      print('previous: $previous, next: $next');
+    },
+  );
 }
