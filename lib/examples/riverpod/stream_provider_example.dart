@@ -12,11 +12,11 @@ void main() async {
 
   final asyncValue = container.read(_streamProvider)
     ..when(
-      data: (data) => print('data: $data'),
-      error: (error, _) => print('error: $error'),
-      loading: () => print('loading'),
+      data: (data) => print('AsyncData: $data'),
+      error: (error, _) => print('AsyncError: $error'),
+      loading: () => print('AsyncLoading'),
     );
-  print(asyncValue); // AsyncLoading<String>()
+  print('AsyncValue: $asyncValue');
 
   try {
     final future = container.read(_streamProvider.future); // Future<String>
