@@ -112,6 +112,10 @@ print(xs.runtimeType); // List<dynamic>
 final ys = List<String>.from(xs);
 print(ys.runtimeType); // List<String>
 
+// DON’T use cast() when a nearby operation will do
+// https://dart.dev/effective-dart/usage#dont-use-cast-when-a-nearby-operation-will-do
+// AVOID using cast()
+// https://dart.dev/effective-dart/usage#avoid-using-cast
 final zs = xs.cast<String>();
 print(zs.runtimeType); // CastList<dynamic, String>
 ```
