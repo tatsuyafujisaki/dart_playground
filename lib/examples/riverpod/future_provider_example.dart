@@ -3,12 +3,16 @@ import 'package:riverpod/riverpod.dart';
 final _futureProvider =
     FutureProvider.autoDispose<String>((_) => Future.value('Hello'));
 
-final _errorFutureProvider =
+final _errorFutureProvider1 =
     FutureProvider.autoDispose<String>((_) => Future.error(Exception()));
+
+final _errorFutureProvider2 =
+    FutureProvider.autoDispose<String>((_) => throw Exception());
 
 void main() async {
   await _debugFutureProvider(_futureProvider);
-  await _debugFutureProvider(_errorFutureProvider);
+  await _debugFutureProvider(_errorFutureProvider1);
+  await _debugFutureProvider(_errorFutureProvider2);
 }
 
 Future<void> _debugFutureProvider(
