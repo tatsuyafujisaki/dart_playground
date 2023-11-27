@@ -17,3 +17,4 @@ https://pub.dev/documentation/riverpod/latest/riverpod/Ref/refresh.html
   - > DON'T use `ref.read` inside the build method.
 - https://docs-v2.riverpod.dev/docs/concepts/scopes
   - > DANGER: Do not use multiple ProviderContainers, without an understanding of how they work.
+  - > Only create a ProviderContainer without a ProviderScope for testing and dart-only usage.
