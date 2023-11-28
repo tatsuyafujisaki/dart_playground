@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dart_playground/examples/freezed/person.dart';
 
-class _JsonUtils {
+class _JsonUtil {
   static T parseObject<T>(
     String json,
     T Function(Map<String, dynamic> json) converter,
@@ -20,13 +20,13 @@ class _JsonUtils {
 
 void main() {
   print(
-    _JsonUtils.parseObject(
+    _JsonUtil.parseObject(
       '{ "name": "Jane", "age": 18 }',
       Person.fromJson,
     ),
   );
   print(
-    _JsonUtils.parseList(
+    _JsonUtil.parseList(
       '[{ "name": "Jane", "age": 18 }, { "name": "John", "age": 20 }]',
       Person.fromJson,
     ),
