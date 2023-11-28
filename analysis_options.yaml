@@ -23,15 +23,19 @@ linter:
     - cancel_subscriptions
     - cascade_invocations
     - close_sinks
+    - combinators_ordering
     - deprecated_consistency
     - deprecated_member_use_from_same_package
     - directives_ordering
     - discarded_futures
     - eol_at_end_of_file
+    - implicit_reopen
+    - invalid_case_patterns
     - join_return_with_assignment
     - matching_super_parameters
     - no_literal_bool_comparisons
     - no_self_assignments
+    - no_wildcard_variable_uses
     - omit_local_variable_types
     - only_throw_errors
     - parameter_assignments
