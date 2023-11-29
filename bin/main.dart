@@ -1,7 +1,13 @@
-import 'dart:io';
+DateTime truncateSeconds(DateTime dateTime) => DateTime(
+      dateTime.year,
+      dateTime.month,
+      dateTime.day,
+      dateTime.hour,
+      dateTime.minute,
+    );
 
 void main() {
-  print(Platform.version);
-  print(const String.fromEnvironment('MY_VAR1'));
-  print(const String.fromEnvironment('MY_VAR2'));
+  final now = DateTime.now();
+  print(now);
+  print(truncateSeconds(now));
 }
