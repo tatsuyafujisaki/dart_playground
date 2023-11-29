@@ -13,10 +13,14 @@ final _watchingCascadingStateProvider2 = StateProvider.autoDispose(
 void main() {
   final container = ProviderContainer();
 
+  print(container.read(_stateProvider));
   print(container.read(_readingCascadingStateProvider));
   print(container.read(_watchingCascadingStateProvider2));
 
+  print('--');
+
   container.invalidate(_stateProvider);
+  print(container.read(_stateProvider));
   print(container.read(_readingCascadingStateProvider));
   print(container.read(_watchingCascadingStateProvider2));
 }
