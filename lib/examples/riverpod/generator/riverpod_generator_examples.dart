@@ -55,36 +55,36 @@ class MySet extends _$MySet {
 }
 
 void showGeneratedFunctionProviderExamples() {
-  final providerContainer = ProviderContainer();
-  print(providerContainer.read(myGeneratedParameterlessProvider)); // Hello!
+  final container = ProviderContainer();
+  print(container.read(myGeneratedParameterlessProvider)); // Hello!
   print(
-    providerContainer.read(myGeneratedRequiredParameterProvider('Minnie')),
+    container.read(myGeneratedRequiredParameterProvider('Minnie')),
   ); // Hello, Minnie!
   print(
-    providerContainer.read(myGeneratedOptionalParameterProvider()),
+    container.read(myGeneratedOptionalParameterProvider()),
   ); // Hello, Anonymous!
   print(
-    providerContainer.read(myGeneratedOptionalParameterProvider('Donald')),
+    container.read(myGeneratedOptionalParameterProvider('Donald')),
   ); // Hello, Donald!
 
   print(
-    providerContainer.read(myGeneratedRequiredParametersProvider('Goofy', 18)),
+    container.read(myGeneratedRequiredParametersProvider('Goofy', 18)),
   ); // Hello, Donald!
 }
 
 void showGeneratedBoolNotifirerProviderExamples() {
-  final providerContainer = ProviderContainer();
-  print(providerContainer.read(myBoolProvider)); // false
-  providerContainer.read(myBoolProvider.notifier).toggle();
-  print(providerContainer.read(myBoolProvider)); // true
+  final container = ProviderContainer();
+  print(container.read(myBoolProvider)); // false
+  container.read(myBoolProvider.notifier).toggle();
+  print(container.read(myBoolProvider)); // true
 }
 
 void showGeneratedSetNotifirerProviderExamples() {
-  final providerContainer = ProviderContainer();
-  print(providerContainer.read(mySetProvider)); // {}
-  providerContainer.read(mySetProvider.notifier).add('a');
-  print(providerContainer.read(mySetProvider)); // {'a'}
-  providerContainer.read(mySetProvider.notifier).add('b');
-  providerContainer.read(mySetProvider.notifier).remove('a');
-  print(providerContainer.read(mySetProvider)); // {'b'}
+  final container = ProviderContainer();
+  print(container.read(mySetProvider)); // {}
+  container.read(mySetProvider.notifier).add('a');
+  print(container.read(mySetProvider)); // {'a'}
+  container.read(mySetProvider.notifier).add('b');
+  container.read(mySetProvider.notifier).remove('a');
+  print(container.read(mySetProvider)); // {'b'}
 }
