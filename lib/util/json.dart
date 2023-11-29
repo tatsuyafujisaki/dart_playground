@@ -5,16 +5,16 @@ import 'package:dart_playground/examples/freezed/person.dart';
 class _Json {
   static T parseObject<T>(
     String json,
-    T Function(Map<String, dynamic> json) converter,
+    T Function(Map<String, dynamic> json) toElement,
   ) =>
-      converter(jsonDecode(json) as Map<String, dynamic>);
+      toElement(jsonDecode(json) as Map<String, dynamic>);
 
   static List<T> parseList<T>(
     String json,
-    T Function(Map<String, dynamic> json) converter,
+    T Function(Map<String, dynamic> json) toElement,
   ) =>
       List<Map<String, dynamic>>.from(jsonDecode(json) as Iterable)
-          .map(converter)
+          .map(toElement)
           .toList();
 }
 
