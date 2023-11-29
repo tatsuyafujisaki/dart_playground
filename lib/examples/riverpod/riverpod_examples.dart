@@ -1,51 +1,61 @@
 import 'package:riverpod/riverpod.dart';
 
-final myParameterlessProvider = Provider.autoDispose((ref) => 'Hello!');
-final mySingleParameterProvider =
+final _parameterlessProvider = Provider.autoDispose((ref) => 'Hello!');
+final _singleParameterProvider =
     Provider.autoDispose.family<String, String>((ref, name) => 'Hello, $name!');
 
-final myStateProvider = StateProvider.autoDispose((_) => false);
-final mySetStateProvider = StateProvider.autoDispose((_) => <String>{});
-final myMapStateProvider = StateProvider.autoDispose((_) => <String, bool>{});
+final _stateProvider = StateProvider.autoDispose((_) => false);
+final _setStateProvider = StateProvider.autoDispose((_) => <String>{});
+final _mapStateProvider = StateProvider.autoDispose((_) => <String, bool>{});
 
-void showProviderExamples() {
+void _showProviderExamples() {
   final providerContainer = ProviderContainer();
-  print(providerContainer.read(myParameterlessProvider)); // Hello!
+  print(providerContainer.read(_parameterlessProvider)); // Hello!
   print(
-    providerContainer.read(mySingleParameterProvider('Mickey')),
+    providerContainer.read(_singleParameterProvider('Mickey')),
   ); // Hello, Mickey!
 }
 
-void showStateProviderExamples() {
+void _showStateProviderExamples() {
   final providerContainer = ProviderContainer();
-  print(providerContainer.read(myStateProvider));
-  providerContainer.read(myStateProvider.notifier).update((state) => !state);
-  print(providerContainer.read(myStateProvider));
+  print(providerContainer.read(_stateProvider));
+  providerContainer.read(_stateProvider.notifier).update((state) => !state);
+  print(providerContainer.read(_stateProvider));
 }
 
-void showSetStateProviderExamples() {
+void _showSetStateProviderExamples() {
   final providerContainer = ProviderContainer();
-  print(providerContainer.read(mySetStateProvider)); // {}
+  print(providerContainer.read(_setStateProvider)); // {}
   providerContainer
-      .read(mySetStateProvider.notifier)
+      .read(_setStateProvider.notifier)
       .update((state) => {'a', 'b'});
-  print(providerContainer.read(mySetStateProvider)); // {'a', 'b'}
+  print(providerContainer.read(_setStateProvider)); // {'a', 'b'}
   providerContainer
-      .read(mySetStateProvider.notifier)
+      .read(_setStateProvider.notifier)
       .update((state) => {...state, 'c', 'd'});
-  print(providerContainer.read(mySetStateProvider)); // {'a', 'b', 'c', 'd'}
+  print(providerContainer.read(_setStateProvider)); // {'a', 'b', 'c', 'd'}
 }
 
-void showMapStateProviderExamples() {
+void _showMapStateProviderExamples() {
   final providerContainer = ProviderContainer();
-  print(providerContainer.read(myMapStateProvider)); // {}
+  print(providerContainer.read(_mapStateProvider)); // {}
   providerContainer
-      .read(myMapStateProvider.notifier)
+      .read(_mapStateProvider.notifier)
       .update((state) => {'a': false, 'b': false});
-  print(providerContainer.read(myMapStateProvider)); // {a: false, b: false}
-  providerContainer.read(myMapStateProvider.notifier).update((state) {
+  print(providerContainer.read(_mapStateProvider)); // {a: false, b: false}
+  providerContainer.read(_mapStateProvider.notifier).update((state) {
     state['bar'] = true;
     return state;
   });
-  print(providerContainer.read(myMapStateProvider)); // {a: false, b: true}
+  print(providerContainer.read(_mapStateProvider)); // {a: false, b: true}
+}
+
+void main() {
+  _showProviderExamples();
+  print('--');
+  _showStateProviderExamples();
+  print('--');
+  _showSetStateProviderExamples();
+  print('--');
+  _showMapStateProviderExamples();
 }
