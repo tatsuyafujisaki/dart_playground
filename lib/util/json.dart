@@ -9,7 +9,7 @@ class _Json {
   ) =>
       toElement(jsonDecode(json) as Map<String, dynamic>);
 
-  static List<T> parseList<T>(
+  static List<T> parseArray<T>(
     String json,
     T Function(Map<String, dynamic> json) toElement,
   ) =>
@@ -26,7 +26,7 @@ void main() {
     ),
   );
   print(
-    _Json.parseList(
+    _Json.parseArray(
       '[{ "name": "Jane", "age": 18 }, { "name": "John", "age": 20 }]',
       Person.fromJson,
     ),
