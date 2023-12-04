@@ -9,7 +9,7 @@ class _Person {
   final String name;
   final int age;
 
-  // toJson() is automatically called then you call jsonEncode(person).
+  // Calling jsonEncode(person) implicitly calls toJson().
   Map<String, dynamic> toJson() => {
         'name': name,
         'age': 10,
@@ -17,7 +17,7 @@ class _Person {
 }
 
 void main() {
-  final json = '{"name": "Jane", "age": 10}';
+  final json = '{"name": "Nobita", "age": 10}';
   final map = jsonDecode(json) as Map<String, dynamic>;
   final user = _Person.fromJson(map);
   final encoded = jsonEncode(user);
