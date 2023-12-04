@@ -9,7 +9,7 @@ class _Person {
   final String name;
   final int age;
 
-  // Calling jsonEncode(person) implicitly calls toJson().
+  // jsonEncode() implicitly calls toJson().
   Map<String, dynamic> toJson() => {
         'name': name,
         'age': 10,
