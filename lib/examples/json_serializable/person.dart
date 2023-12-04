@@ -2,16 +2,15 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'person.g.dart';
 
-enum Gender { female, male }
-
-@JsonSerializable()
+// Specify "filedname: FieldRename.snake" as follows if you need to input and output JSON whose keys are snake_case.
+// @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+@JsonSerializable(explicitToJson: true)
 class Person {
-  Person({required this.firstName, required this.lastName, this.gender});
+  Person({required this.firstName, required this.lastName});
 
   factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
-  final String firstName;
+  final String? firstName;
   final String lastName;
-  final Gender? gender;
 
   Map<String, dynamic> toJson() => _$PersonToJson(this);
 }
@@ -19,15 +18,12 @@ class Person {
 void _print(Person person) {
   print(person.firstName);
   print(person.lastName);
-  print(person.gender);
   print(person.toJson());
 }
 
 void main() {
   final map = <String, dynamic>{
-    'firstName': 'Nobita',
-    'lastName': 'Nobi',
-    'gender': 'male',
+    'lastName': 'Smith',
   };
   _print(Person.fromJson(map));
 }
