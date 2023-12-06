@@ -1,6 +1,3 @@
-# Best practices
-[best-practices.md](markdown/best-practices.md)
-
 # Lint
 [lint.md](markdown/lint.md)
 
