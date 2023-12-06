@@ -1,3 +1,3 @@
 - https://pub.dev/packages/freezed#creating-a-model-using-freezed
-  - CONSIDER also importing `package:flutter/foundation.dart``. The reason being, importing `foundation.dart`` also imports classes to make an object nicely readable in Flutter's devtool. If you import foundation.dart, Freezed will automatically do it for you.
+  - > CONSIDER also importing `package:flutter/foundation.dart``. The reason being, importing `foundation.dart`` also imports classes to make an object nicely readable in Flutter's devtool. If you import foundation.dart, Freezed will automatically do it for you.
   - > Freezed will add a toJson method for us.
