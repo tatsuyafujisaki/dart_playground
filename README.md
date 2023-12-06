@@ -10,6 +10,9 @@
 # Asynchronous
 [asynchronous.md](markdown/asynchronous.md)
 
+# Freezed
+[freezed.md](markdown/freezed.md)
+
 # Riverpod
 [riverpod.md](markdown/riverpod.md)
 
