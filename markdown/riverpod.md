@@ -1,3 +1,8 @@
+# Riverpod
+- https://docs-v2.riverpod.dev/docs/essentials/first_request
+  - > The network request will not be executed until the UI reads the provider at least once.
+  - > Subsequent reads will not re-execute the network request, but instead return the previously fetched activity.
+
 # ProviderContainer versus ProviderScope
 - [ProviderContainer](https://pub.dev/documentation/riverpod/latest/riverpod/ProviderContainer-class.html) is for a non-Flutter application and is equivalent to [ProviderScope](https://pub.dev/documentation/flutter_riverpod/latest/flutter_riverpod/ProviderScope-class.html) in a Flutter application.
   - https://youtu.be/BJtQ0dfI-RA?t=973
@@ -9,7 +14,7 @@
 # What is the difference between `Ref.invalidate` and `Ref.refresh`?
 https://pub.dev/documentation/riverpod/latest/riverpod/Ref/refresh.html
 
-# Riverpod best practices
+# Best practices
 - https://docs-v2.riverpod.dev/docs/concepts/reading
   - > NOTE: Whenever possible, prefer using `ref.watch` over `ref.read` or `ref.listen` to implement a feature.
   - > WARNING: The `watch` method should not be called asynchronously, like inside an onPressed of an ElevatedButton. The watch method should not be called asynchronously, like inside an onPressed of an ElevatedButton. Nor should it be used inside `initState` and other State life-cycles. In those cases, consider using `ref.read` instead.
