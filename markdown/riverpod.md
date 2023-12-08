@@ -1,4 +1,4 @@
-# Riverpod
+# General info
 - https://docs-v2.riverpod.dev/docs/essentials/first_request
   - > The network request will not be executed until the UI reads the provider at least once.
   - > Subsequent reads will not re-execute the network request, but instead return the previously fetched activity.
@@ -15,13 +15,20 @@
 https://pub.dev/documentation/riverpod/latest/riverpod/Ref/refresh.html
 
 # Best practices
-- https://docs-v2.riverpod.dev/docs/essentials/first_request
-  - > CAUTION: If you are new to Riverpod, using "hooks" is discouraged.
+## ProviderContainer
+- https://docs-v2.riverpod.dev/docs/concepts/scopes
+  - > DANGER: Do not use multiple ProviderContainers, without an understanding of how they work.
+  - > Only create a ProviderContainer without a ProviderScope for testing and dart-only usage.
+## .autoDispose / .family / riverpod_lint
+- https://docs-v2.riverpod.dev/docs/essentials/passing_args
+  - > CAUTION: When passing arguments to providers, it is highly encouraged to enable "autoDispose" on the provider. Failing to do so may result in memory leaks.
+  - > To help spot this mistake, it is recommended to use the riverpod_lint and enable the provider_parameters lint rule. Then, the previous snippet would show a warning.
+## ref.watch / ref.read / ref.listen
 - https://docs-v2.riverpod.dev/docs/concepts/reading
   - > NOTE: Whenever possible, prefer using `ref.watch` over `ref.read` or `ref.listen` to implement a feature.
   - > WARNING: The `watch` method should not be called asynchronously, like inside an onPressed of an ElevatedButton. The watch method should not be called asynchronously, like inside an onPressed of an ElevatedButton. Nor should it be used inside `initState` and other State life-cycles. In those cases, consider using `ref.read` instead.
   - > Using `ref.read` should be avoided as much as possible because it is not reactive.
   - > DON'T use `ref.read` inside the build method.
-- https://docs-v2.riverpod.dev/docs/concepts/scopes
-  - > DANGER: Do not use multiple ProviderContainers, without an understanding of how they work.
-  - > Only create a ProviderContainer without a ProviderScope for testing and dart-only usage.
+## Hooks
+- https://docs-v2.riverpod.dev/docs/essentials/first_request
+  - > CAUTION: If you are new to Riverpod, using "hooks" is discouraged.
