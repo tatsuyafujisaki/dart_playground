@@ -15,8 +15,8 @@ class _Singleton2 {
 
 /// Singleton by static getter
 class Singleton3 {
-  Singleton3.__privateConstructor();
-  static final _instance = Singleton3.__privateConstructor();
+  Singleton3._privateConstructor();
+  static final _instance = Singleton3._privateConstructor();
   static Singleton3 get instance => _instance;
 }
 
