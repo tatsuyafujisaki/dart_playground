@@ -6,28 +6,11 @@ class Encryptor {
   );
   static final _iv = IV.fromLength(16);
 
-  static String encrypt(String input) {
-    if (input.isEmpty) {
-      // Passing an empty string to encrypt() will throw an exception.
-      return '';
-    } else {
-      return _encryptor.encrypt(input, iv: _iv).base64;
-    }
-  }
+  // Passing an empty string to encrypt() will throw an exception.
+  static String encrypt(String input) =>
+      input.isEmpty ? '' : _encryptor.encrypt(input, iv: _iv).base64;
 
-  static String decrypt(String encoded) {
-    if (encoded.isEmpty) {
-      // Passing an empty string to decrypt64() will throw an exception.
-      return '';
-    } else {
-      return _encryptor.decrypt64(encoded, iv: _iv);
-    }
-  }
-}
-
-void main() {
-  final encrypted = Encryptor.encrypt('Hello!');
-  final decrypted = Encryptor.decrypt(encrypted);
-  print('encrypted: $encrypted');
-  print('decrypted: $decrypted');
+  // Passing an empty string to decrypt64() will throw an exception.
+  static String decrypt(String encoded) =>
+      encoded.isEmpty ? '' : _encryptor.decrypt64(encoded, iv: _iv);
 }
