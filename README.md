@@ -16,6 +16,9 @@
 # CocoaPods
 [cocoa-pods.md](markdown/cocoa-pods.md)
 
+# Best practices
+[best-practices.md](markdown/best-practices.md)
+
 # Division, quotient, and remainder
 ```dart
 print(10 / 3); // 3.33..
