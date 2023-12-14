@@ -23,7 +23,9 @@ linter:
     - avoid_catching_errors
     - avoid_classes_with_only_static_members
     - avoid_dynamic_calls
+    - avoid_equals_and_hash_code_on_mutable_classes
     - avoid_escaping_inner_quotes
+    - avoid_field_initializers_in_const_classes
     - avoid_redundant_argument_values
     - avoid_slow_async_io
     - avoid_types_on_closure_parameters # incompatible with always_specify_types
