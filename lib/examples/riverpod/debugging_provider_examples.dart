@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:riverpod/riverpod.dart';
 
+// ignore: unused_element
 final _stateProvider = StateProvider.autoDispose(
   (ref) {
     ref

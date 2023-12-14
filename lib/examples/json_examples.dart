@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 void _printJsonRootType(String json) {
-  print(jsonDecode(json).runtimeType);
+  print((jsonDecode(json) as Map<String, dynamic>).runtimeType);
 }
 
 void main() {

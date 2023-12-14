@@ -37,7 +37,7 @@ Future<void> _futureExample<T>(
   try {
     final future = ProviderContainer().read(futureProvider.future);
     print('awaited future: ${await future}');
-  } catch (e) {
+  } on Exception catch (e) {
     print('awaited future error: $e');
   }
 }
