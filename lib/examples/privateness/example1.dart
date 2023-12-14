@@ -1,5 +1,5 @@
-final _myTopPrivateLevelVariable = '_myTopPrivateLevelVariable';
-final myTopLevelPublicVariable = 'myTopLevelPublicVariable';
+const _myTopPrivateLevelVariable = '_myTopPrivateLevelVariable';
+const myTopLevelPublicVariable = 'myTopLevelPublicVariable';
 
 class MyPublic {
   final _myPrivateVariable = '_myPrivateVariable';

@@ -17,7 +17,7 @@ class _Person {
 }
 
 void main() {
-  final json = '{"name": "Nobita", "age": 10}';
+  const json = '{"name": "Nobita", "age": 10}';
   final map = jsonDecode(json) as Map<String, dynamic>;
   final user = _Person.fromJson(map);
   final encoded = jsonEncode(user);

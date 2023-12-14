@@ -2,7 +2,7 @@ import 'package:riverpod/riverpod.dart';
 
 final _streamProvider = StreamProvider.autoDispose<String>(
   (_) => Stream.periodic(
-    Duration(seconds: 1),
+    const Duration(seconds: 1),
     (count) => (count < 3) ? count.toString() : throw Exception(),
   ),
 );
