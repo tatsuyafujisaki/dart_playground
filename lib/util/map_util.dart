@@ -1,5 +1,5 @@
 Map<String, Object?> _filterNotNull(Map<String, Object?> map) =>
-    // Map.from() makes a deep copy.
+    // Map.from() makes a deep copy to keep the original map unchanged.
     Map.from(map)..removeWhere((_, value) => value == null);
 
 void main() {
