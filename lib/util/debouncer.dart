@@ -1,7 +1,7 @@
 import 'dart:async';
 
-class Debouncer {
-  Debouncer(this.milliseconds);
+class _Debouncer {
+  _Debouncer(this.milliseconds);
   final int milliseconds;
   Timer? _timer;
 
@@ -12,6 +12,6 @@ class Debouncer {
 }
 
 void main() {
-  Debouncer(3000).run(() => print('3 seconds passed.'));
+  _Debouncer(3000).run(() => print('3 seconds passed.'));
   print('0 second passed.');
 }
