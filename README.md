@@ -16,6 +16,9 @@
 # CocoaPods
 [cocoa-pods.md](markdown/cocoa-pods.md)
 
+# Test
+[test.md](markdown/test.md)
+
 # Best practices
 [best-practices.md](markdown/best-practices.md)
 
