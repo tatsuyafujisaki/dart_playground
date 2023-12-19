@@ -10,6 +10,7 @@ dependencies:
   intl: any
   json_annotation: any
   logging: any
+  path: any
   riverpod: any
   riverpod_annotation: any
 dev_dependencies:
