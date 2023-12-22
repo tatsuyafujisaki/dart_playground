@@ -22,6 +22,7 @@ void main() {
       const Person(name: 'John', age: 42).copyWith(lastUpdated: DateTime.now());
   final map = person.toJson();
   print(map);
+  print(DateTime.now());
   print(Person.fromJson(map));
   print(jsonEncode(person)); // jsonEncode implicitly calls toJson.
 }
