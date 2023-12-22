@@ -21,8 +21,11 @@ void main() {
   test(
     'Can convert DateTime to String without subseconds',
     () {
-      final person = const Person(name: 'John', age: 42)
-          .copyWith(lastUpdated: DateTime(2024, 01, 02, 12, 34, 56, 123, 456));
+      final person = Person(
+        name: 'John',
+        age: 42,
+        lastUpdated: DateTime(2024, 01, 02, 12, 34, 56, 123, 456),
+      );
       expect(
         jsonEncode(person),
         '{"name":"John","age":42,"lastUpdated":"2024-01-02 12:34:56"}',
