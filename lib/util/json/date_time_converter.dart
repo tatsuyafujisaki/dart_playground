@@ -8,5 +8,6 @@ class DateTimeConverter implements JsonConverter<DateTime, String> {
   DateTime fromJson(String json) => DateTime.parse(json);
 
   @override
-  String toJson(DateTime object) => DateFormat('yyyy-MM-dd').format(object);
+  String toJson(DateTime object) =>
+      DateFormat('yyyy-MM-dd HH:mm:ss').format(object);
 }

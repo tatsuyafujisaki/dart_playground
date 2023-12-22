@@ -22,10 +22,10 @@ void main() {
 
   test('Can convert Person (including DateTime) to JSON', () {
     final person = const Person(name: 'John', age: 42)
-        .copyWith(lastUpdated: DateTime.now());
+        .copyWith(lastUpdated: DateTime(2024, 08, 26, 12, 34, 56, 123, 456));
     expect(
       jsonEncode(person),
-      '{"name":"John","age":42,"lastUpdated":"2023-12-22"}',
+      '{"name":"John","age":42,"lastUpdated":"2024-08-26 12:34:56"}',
     );
   });
 }
