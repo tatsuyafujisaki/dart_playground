@@ -19,13 +19,13 @@ List<T> _parseArray<T>(
 void main() {
   print(
     _parseObject(
-      '{ "name": "Jane", "age": 18 }',
+      '{ "name": "John", "age": 42 }',
       Person.fromJson,
     ),
   );
   print(
     _parseArray(
-      '[{ "name": "Jane", "age": 18 }, { "name": "John", "age": 20 }]',
+      '[{ "name": "John", "age": 42 }, { "name": "Jane", "age": 18 }]',
       Person.fromJson,
     ),
   );
