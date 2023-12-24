@@ -2,7 +2,8 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'person.g.dart';
 
-// Specify "filedname: FieldRename.snake" as follows if you need to input and output JSON whose keys are snake_case.
+// Specify "filedname: FieldRename.snake" as follows if you need to input
+// and output JSON whose keys are snake_case.
 // @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @JsonSerializable(explicitToJson: true)
 class _Person {
