@@ -9,9 +9,6 @@ analyzer:
     strict-casts: true
     strict-inference: true
     strict-raw-types: true
-  errors:
-    # https://pub.dev/packages/freezed#disabling-invalid_annotation_target-warning-and-warning-in-generates-files
-    invalid_annotation_target: ignore
 
 linter:
   rules:
