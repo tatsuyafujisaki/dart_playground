@@ -54,7 +54,7 @@ linter:
     - diagnostic_describe_all_properties
     - directives_ordering
     - discarded_futures
-    - do_not_use_environment
+    # - do_not_use_environment
     - eol_at_end_of_file
     - implicit_reopen
     - invalid_case_patterns
