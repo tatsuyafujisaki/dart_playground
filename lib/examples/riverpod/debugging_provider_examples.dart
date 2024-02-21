@@ -16,3 +16,10 @@ final _stateProvider = StateProvider.autoDispose(
     return Random().nextInt(100);
   },
 );
+
+void main() {
+  final container = ProviderContainer();
+  print(container.read(_stateProvider));
+  container.invalidate(_stateProvider);
+  print(container.read(_stateProvider));
+}
