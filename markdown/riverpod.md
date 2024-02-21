@@ -30,7 +30,15 @@ https://pub.dev/documentation/riverpod/latest/riverpod/Ref/refresh.html
   - > Using `ref.read` should be avoided as much as possible because it is not reactive.
   - > DON'T use `ref.read` inside the build method.
 
-## How to derive a FutureProvider from another FutureProvider
+## FutureProvider
+### How to extract `T` from `Future<T>` in a FutureProvider
+```dart
+final futureProvider = FutureProvider.autoDispose<String>((_) => Future.value('Hello'));
+final s = await ProviderContainer().read(futureProvider.future);
+print(s); // Hello
+```
+
+### How to derive a FutureProvider from another FutureProvider
 ```dart
 final futureProvider1 = FutureProvider.autoDispose<String>(
   (ref) => Future.value('hello'),
