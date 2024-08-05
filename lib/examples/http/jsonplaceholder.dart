@@ -19,8 +19,8 @@ Future<Iterable<Album>> _getAlbums() async {
 }
 
 // ignore: unused_element
-Future<Album> _getAlbum() async {
-  final uri = Uri.https(_baseUrl, 'albums/1');
+Future<Album> _getAlbum({required int id}) async {
+  final uri = Uri.https(_baseUrl, 'albums/$id');
   final response = await http.get(uri);
   if (response.statusCode == 200) {
     return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -52,8 +52,24 @@ Future<Album> _createAlbum() async {
   }
 }
 
+/// https://docs.flutter.dev/cookbook/networking/delete-data#2-delete-data-on-the-server
+// ignore: unused_element
+Future<void> _deleteAlbum({required int id}) async {
+  final uri = Uri.https(_baseUrl, 'albums/$id');
+  final response = await http.delete(
+    uri,
+    headers: <String, String>{
+      HttpHeaders.contentTypeHeader: ContentType.json.toString(),
+    },
+  );
+  if (response.statusCode != 200) {
+    throw Exception('Failed to delete an album.');
+  }
+}
+
 void main() async {
   // print(await _getAlbums());
-  // print(await _getAlbum());
-  print(await _createAlbum());
+  // print(await _getAlbum(id: 1));
+  // print(await _createAlbum());
+  await _deleteAlbum(id: 1);
 }
