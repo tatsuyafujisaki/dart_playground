@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 
 const _baseUrl = 'jsonplaceholder.typicode.com';
 
+// ignore: unused_element
 Future<Iterable<Album>> _getAlbums() async {
   final uri = Uri.https(_baseUrl, 'albums');
   final response = await http.get(uri);
@@ -17,6 +18,7 @@ Future<Iterable<Album>> _getAlbums() async {
   }
 }
 
+// ignore: unused_element
 Future<Album> _getAlbum() async {
   final uri = Uri.https(_baseUrl, 'albums/1');
   final response = await http.get(uri);
@@ -28,6 +30,7 @@ Future<Album> _getAlbum() async {
 }
 
 /// https://docs.flutter.dev/cookbook/networking/send-data#convert-the-http-response-to-an-album
+// ignore: unused_element
 Future<Album> _createAlbum() async {
   final uri = Uri.https(_baseUrl, 'albums');
   final response = await http.post(

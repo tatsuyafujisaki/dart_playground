@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dart_playground/examples/freezed/person.dart';
 
+// ignore: unreachable_from_main
 String minifyJson(String json) => jsonEncode(jsonDecode(json));
 
 T _parseObject<T>(
