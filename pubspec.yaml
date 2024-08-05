@@ -2,11 +2,12 @@ name: dart_playground
 publish_to: 'none'
 version: 1.0.0+1
 environment:
-  sdk: ^3.2.6
+  sdk: ^3.4.4
 dependencies:
   collection: any
   encrypt: any
   freezed_annotation: any
+  http: any
   intl: any
   json_annotation: any
   logging: any
