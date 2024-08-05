@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:dart_playground/examples/freezed/person.dart';
 
+String minifyJson(String json) => jsonEncode(jsonDecode(json));
+
 T _parseObject<T>(
   String json,
   T Function(Map<String, dynamic> json) toElement,
