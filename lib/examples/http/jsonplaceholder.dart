@@ -31,24 +31,40 @@ Future<Album> _getAlbum({required int id}) async {
 
 /// https://docs.flutter.dev/cookbook/networking/send-data#convert-the-http-response-to-an-album
 // ignore: unused_element
-Future<Album> _createAlbum() async {
+Future<Album> _createAlbum({required Map<String, dynamic> body}) async {
   final uri = Uri.https(_baseUrl, 'albums');
   final response = await http.post(
     uri,
     headers: <String, String>{
       HttpHeaders.contentTypeHeader: ContentType.json.toString(),
     },
-    body: jsonEncode(
-      <String, dynamic>{
-        'userId': 42,
-        'title': 'MyTitle',
-      },
-    ),
+    body: jsonEncode(body),
   );
   if (response.statusCode == 201) {
     return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
     throw Exception('Failed to create an album.');
+  }
+}
+
+/// https://docs.flutter.dev/cookbook/networking/update-data#2-updating-data-over-the-internet-using-the-http-package
+// ignore: unused_element
+Future<Album> _updateAlbum({
+  required int id,
+  required Map<String, dynamic> body,
+}) async {
+  final uri = Uri.https(_baseUrl, 'albums/$id');
+  final response = await http.put(
+    uri,
+    headers: <String, String>{
+      HttpHeaders.contentTypeHeader: ContentType.json.toString(),
+    },
+    body: jsonEncode(body),
+  );
+  if (response.statusCode == 200) {
+    return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  } else {
+    throw Exception('Failed to update an album.');
   }
 }
 
@@ -70,6 +86,22 @@ Future<void> _deleteAlbum({required int id}) async {
 void main() async {
   // print(await _getAlbums());
   // print(await _getAlbum(id: 1));
-  // print(await _createAlbum());
+  print(
+    await _createAlbum(
+      body: <String, dynamic>{
+        'userId': 42,
+        'title': 'My album',
+      },
+    ),
+  );
+  print(
+    await _updateAlbum(
+      id: 1,
+      body: <String, dynamic>{
+        'userId': 420,
+        'title': 'My updated album',
+      },
+    ),
+  );
   await _deleteAlbum(id: 1);
 }
