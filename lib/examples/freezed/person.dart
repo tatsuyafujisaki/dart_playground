@@ -14,7 +14,7 @@ class Person with _$Person {
     @DateTimeConverter() DateTime? lastUpdated,
   }) = _Person;
 
-  factory Person.fromJson(Map<String, Object?> json) => _$PersonFromJson(json);
+  factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
 }
 
 void main() {
