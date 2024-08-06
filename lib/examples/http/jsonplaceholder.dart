@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 
 const _baseUrl = 'jsonplaceholder.typicode.com';
 
+/// https://docs.flutter.dev/cookbook/networking/fetch-data#2-make-a-network-request
 // ignore: unused_element
 Future<Iterable<Album>> _getAlbums() async {
   final uri = Uri.https(_baseUrl, 'albums');
@@ -18,6 +19,7 @@ Future<Iterable<Album>> _getAlbums() async {
   }
 }
 
+/// https://docs.flutter.dev/cookbook/networking/fetch-data#2-make-a-network-request
 // ignore: unused_element
 Future<Album> _getAlbum({required int id}) async {
   final uri = Uri.https(_baseUrl, 'albums/$id');
