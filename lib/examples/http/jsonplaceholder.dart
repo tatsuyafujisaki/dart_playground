@@ -11,7 +11,7 @@ const _baseUrl = 'jsonplaceholder.typicode.com';
 Future<Iterable<Album>> _getAlbums() async {
   final uri = Uri.https(_baseUrl, 'albums');
   final response = await http.get(uri);
-  if (response.statusCode != 200) {
+  if (response.statusCode == 200) {
     final mapList = jsonDecode(response.body) as List<dynamic>;
     return mapList.map((map) => Album.fromJson(map as Map<String, dynamic>));
   } else {
@@ -86,8 +86,8 @@ Future<void> _deleteAlbum({required int id}) async {
 }
 
 void main() async {
-  // print(await _getAlbums());
-  // print(await _getAlbum(id: 1));
+  print(await _getAlbums());
+  print(await _getAlbum(id: 1));
   print(
     await _createAlbum(
       body: <String, dynamic>{
