@@ -1,48 +1,3 @@
-# Lint
-[lint.md](markdown/lint.md)
-
-# Function
-[function.md](markdown/function.md)
-
-# Asynchronous
-[asynchronous.md](markdown/asynchronous.md)
-
-# Freezed
-[freezed.md](markdown/freezed.md)
-
-# Riverpod
-[riverpod.md](markdown/riverpod.md)
-
-# CocoaPods
-[cocoa-pods.md](markdown/cocoa-pods.md)
-
-# Test
-[test.md](markdown/test.md)
-
-# Best practices
-[best-practices.md](markdown/best-practices.md)
-
-# Division, quotient, and remainder
-```dart
-print(10 / 3); // 3.33..
-print(10 ~/ 3); // 3
-print(10 % 3); // 1
-```
-
-# Example of the `??=` operator
-```dart
-void main() {
-  String? a = 'a';
-  String? b = null;
-
-  a ??= 'c'; // 'c' will not be assigned to a because a is not null.
-  b ??= 'c'; // 'c' will be assigned to b because b is null.
-
-  print(a); // a
-  print(b); // c
-}
-```
-
 # Required parameter / optional parameter / named parameter / unnamed (aka positional) parameter
 ## Example of unnamed (aka positional) parameters
 ```dart
@@ -113,18 +68,93 @@ void main() {
 }
 ```
 
-# How to convert `List<dynamic>` to `List<String>`
+# List
+## How to clone (deep copy) a List
 ```dart
-final xs = <dynamic>['a', 'b', 'c'];
-print(xs.runtimeType); // List<dynamic>
-
-final ys = List<String>.from(xs);
-print(ys.runtimeType); // List<String>
-
-// DON’T use cast() when a nearby operation will do
-// https://dart.dev/effective-dart/usage#dont-use-cast-when-a-nearby-operation-will-do
-// AVOID using cast()
-// https://dart.dev/effective-dart/usage#avoid-using-cast
-final zs = xs.cast<String>();
-print(zs.runtimeType); // CastList<dynamic, String>
+final list1 = <String>['🍎', '🍊'];
+final list2 = List<String>.from(list1);
+list2[0] = '🍏';
+print(list1); // [🍎, 🍊]
+print(list2); // [🍏, 🍊]
 ```
+
+## How to convert `List<dynamic>` to `List<String>`
+```dart
+final list1 = <dynamic>['🍎'];
+print(list1.runtimeType); // List<dynamic>
+
+final list2 = List<String>.from(list1);
+print(list2.runtimeType); // List<String>
+
+// Not recommended way:
+// > DON'T use cast() when a nearby operation will do
+// https://dart.dev/effective-dart/usage#dont-use-cast-when-a-nearby-operation-will-do
+// > AVOID using cast()
+// https://dart.dev/effective-dart/usage#avoid-using-cast
+final list3 = list1.cast<String>().toList();
+print(list3.runtimeType); // List<String>
+```
+
+# Set
+## How to clone (deep copy) a Set
+```dart
+final set1 = <String>{'🍎', '🍊'};
+final set2 = Set<String>.from(set1)
+  ..remove('🍎')
+  ..add('🍏');
+print(set1); // {🍎, 🍊}
+print(set2); // {🍊, 🍏}
+```
+
+# Map
+## How to clone (deep copy) a Map
+```dart
+final map1 = <String, String>{'apple': '🍎', 'orange': '🍊'};
+final map2 = Map<String, String>.from(map1);
+map2['apple'] = '🍏';
+print(map1); // {apple: 🍎, orange: 🍊}
+print(map2); // {apple: 🍏, orange: 🍊}
+```
+
+# Example of `??=`
+```dart
+String? apple1 = '🍎';
+String? apple2;
+
+apple1 ??= '🍏';
+apple2 ??= '🍏';
+
+print(apple1); // 🍎
+print(apple2); // 🍏
+```
+
+# Example of division, quotient, and remainder
+```dart
+print(10 / 3); // 3.33..
+print(10 ~/ 3); // 3
+print(10 % 3); // 1
+```
+
+# Lint
+[lint.md](markdown/lint.md)
+
+# Function
+[function.md](markdown/function.md)
+
+# Asynchronous
+[asynchronous.md](markdown/asynchronous.md)
+
+# Freezed
+[freezed.md](markdown/freezed.md)
+
+# Riverpod
+[riverpod.md](markdown/riverpod.md)
+
+# CocoaPods
+[cocoa-pods.md](markdown/cocoa-pods.md)
+
+# Test
+[test.md](markdown/test.md)
+
+# Best practices
+[best-practices.md](markdown/best-practices.md)
