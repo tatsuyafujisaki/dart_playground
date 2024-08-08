@@ -3,20 +3,20 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'remove_where_examples.freezed.dart';
 
 @freezed
-class Minion with _$Minion {
-  const factory Minion({
-    required String name,
-  }) = _Minion;
+class Fruit with _$Fruit {
+  const factory Fruit({
+    required String emoji,
+  }) = _Fruit;
 }
 
 void main() {
-  final minions = [
-    const Minion(name: 'Kevin'),
-    const Minion(name: 'Stuart'),
-    const Minion(name: 'Bob'),
+  final fruits = [
+    const Fruit(emoji: '🍎'),
+    const Fruit(emoji: '🍏'),
+    const Fruit(emoji: '🍊'),
   ];
 
-  print(minions);
-  minions.removeWhere((minion) => minion.name == 'Stuart');
-  print(minions);
+  print(fruits);
+  fruits.removeWhere((fruits) => fruits.emoji == '🍏');
+  print(fruits);
 }

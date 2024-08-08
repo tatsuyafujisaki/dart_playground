@@ -1,3 +1,13 @@
+# How to print the Dart version
+```dart
+print(Platform.version); // x.x.x (stable)
+```
+
+# How to read an environment variable
+```dart
+final myEnv = const String.fromEnvironment('MY_ENV');
+```
+
 # Required parameter / optional parameter / named parameter / unnamed (aka positional) parameter
 ## Example of unnamed (aka positional) parameters
 ```dart
