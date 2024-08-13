@@ -105,6 +105,40 @@ final list3 = list1.cast<String>().toList();
 print(list3.runtimeType); // List<String>
 ```
 
+# Difference between List and UnmodifiableListView
+Operation|List|UnmodifiableListView
+--|--|--
+Can add or remove an item?|Yes|No
+Can replace an item?|Yes|No
+
+## Example of add/remove/modify on List
+```dart
+void main() {
+  final fruits = ['🍎']
+    ..remove('🍎')
+    ..add('🍏');
+
+  fruits[0] = '🍊';
+  print(fruits); // ['🍊'];
+}
+```
+
+## Example of add/remove/modify on UnmodifiableListView
+```dart
+void main() {
+  final fruits = UnmodifiableListView(['🍎']);
+
+  // throws "Unsupported operation: Cannot add to an unmodifiable list".
+  // fruits.add('🍏');
+
+  // throws "Unsupported operation: Cannot remove from an unmodifiable list".
+  // fruits.remove('🍎');
+
+  // throws "Unsupported operation: Cannot modify an unmodifiable list".
+  // fruits[0] = '🍏';
+}
+```
+
 # Set
 ## How to clone (deep copy) a Set
 ```dart
