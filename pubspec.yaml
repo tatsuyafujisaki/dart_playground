@@ -7,7 +7,6 @@ dependencies:
   collection: any
   encrypt: any
   freezed_annotation: any
-  http: any
   intl: any
   json_annotation: any
   logging: any
