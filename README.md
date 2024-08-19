@@ -100,6 +100,13 @@ final list3 = list1.cast<String>().toList();
 print(list3.runtimeType); // List<String>
 ```
 
+# How to get an item or null (getOrNull)
+```dart
+final fruits = ['🍎'];
+print(fruits.elementAtOrNull(0)); // 🍎
+print(fruits.elementAtOrNull(1)); // null
+```
+
 # Difference between List and UnmodifiableListView
 Operation|List|UnmodifiableListView
 --|--|--
