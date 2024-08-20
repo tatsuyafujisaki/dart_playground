@@ -162,6 +162,11 @@ print(map1); // {apple: 🍎, orange: 🍊}
 print(map2); // {apple: 🍏, orange: 🍊}
 ```
 
+# What in Dart is equivalent to scope functions﻿ in Kotlin?
+Cascade notation (`..`, `?..`)
+
+https://dart.dev/language/operators#cascade-notation
+
 # Lint
 [lint.md](markdown/lint.md)
 
