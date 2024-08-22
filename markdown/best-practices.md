@@ -11,3 +11,8 @@ https://dart.dev/tools/pub/dependencies#best-practices
 # Effective Dart
 - https://dart.dev/effective-dart/design#prefer-putting-the-most-descriptive-noun-last
   - > PREFER putting the most descriptive noun last
+
+# Use A rather than B for simplicity
+A|B|Note
+--|--|--
+VoidCallback|void Function()|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/stable/dart-html/VoidCallback.html in Dart.
