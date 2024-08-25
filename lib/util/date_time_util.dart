@@ -9,4 +9,9 @@ DateTime truncateSeconds(DateTime dateTime) => DateTime(
     );
 
 // 0:00 instead of 00:00
-DateFormat createMSsDateFormat() => DateFormat('m:ss');
+DateFormat get mSsDateFormat => DateFormat('m:ss');
+
+void main() {
+  final dateTime = DateTime.now();
+  print(mSsDateFormat.format(dateTime));
+}

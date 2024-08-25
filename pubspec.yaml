@@ -20,6 +20,3 @@ dev_dependencies:
   lints: any
   riverpod_generator: any
   test: any
-dependency_overrides:
-  # https://github.com/rrousselGit/riverpod/issues/3689#issuecomment-2272907124
-  analyzer: 6.7.0
