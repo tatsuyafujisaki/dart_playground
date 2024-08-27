@@ -166,27 +166,3 @@ print(map2); // {apple: 🍏, orange: 🍊}
 Cascade notation (`..`, `?..`)
 
 https://dart.dev/language/operators#cascade-notation
-
-# Lint
-[lint.md](markdown/lint.md)
-
-# Function
-[function.md](markdown/function.md)
-
-# Asynchronous
-[asynchronous.md](markdown/asynchronous.md)
-
-# Freezed
-[freezed.md](markdown/freezed.md)
-
-# Riverpod
-[riverpod.md](markdown/riverpod.md)
-
-# CocoaPods
-[cocoa-pods.md](markdown/cocoa-pods.md)
-
-# Miscellaneous examples
-[examples.md](markdown/examples.md)
-
-# Best practices
-[best-practices.md](markdown/best-practices.md)
