@@ -20,7 +20,7 @@ FutureBuilder<String>(
 Use [WidgetsBinding.instance.addPostFrameCallback](https://api.flutter.dev/flutter/scheduler/SchedulerBinding/addPostFrameCallback.html).
 ```dart
 WidgetsBinding.instance.addPostFrameCallback(
-  (callback) async =>  myAsyncFunction(),
+  (_) async =>  myAsyncFunction(),
 );
 ```
 
