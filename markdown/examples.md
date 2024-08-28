@@ -1,3 +1,12 @@
+# Example of a class that contains an instance variable with the default parameter [DateTime.now](https://api.flutter.dev/flutter/dart-core/DateTime/DateTime.now.html)?
+```dart
+class MyClass {
+  final DateTime dateTime;
+
+  MyClass({DateTime? dateTime}) : dateTime = dateTime ?? DateTime.now();
+}
+```
+
 # Example of [FutureOr](https://api.dart.dev/stable/dart-async/FutureOr-class.html)
 ```dart
 import 'dart:async';
