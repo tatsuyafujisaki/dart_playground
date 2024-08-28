@@ -1,10 +1,3 @@
-// ignore: unreachable_from_main
-String formatInMSs(Duration duration) {
-  final minutes = duration.inMinutes;
-  final seconds = duration.inSeconds.toString().padLeft(2, '0');
-  return '$minutes:$seconds';
-}
-
 void main() {
   const duration = Duration(
     hours: 12,
@@ -13,5 +6,11 @@ void main() {
     milliseconds: 123,
     microseconds: 456,
   );
-  print(duration);
+  print(duration); // 12:34:56.123456
+
+  final hhmmss = duration.toString().split('.').first;
+  print(hhmmss); // 12:34:56
+
+  final mmss = hhmmss.substring(3);
+  print(mmss); // 34:56
 }
