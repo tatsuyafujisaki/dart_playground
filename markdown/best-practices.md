@@ -31,4 +31,5 @@ https://dart.dev/tools/pub/dependencies#best-practices
 # Use A rather than B for simplicity
 A|B|Note
 --|--|--
-VoidCallback|void Function()|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/stable/dart-html/VoidCallback.html in Dart.
+[VoidCallback](https://api.dart.dev/stable/3.5.1/dart-html/VoidCallback.html)|void Function()|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/stable/dart-html/VoidCallback.html in Dart.
+[whenComplete](https://api.flutter.dev/flutter/dart-async/Future/whenComplete.html)|[then](https://api.flutter.dev/flutter/dart-async/Future/then.html)|if the [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html) returns nothing.
