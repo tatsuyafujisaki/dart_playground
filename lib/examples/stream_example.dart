@@ -7,26 +7,40 @@ void main() async {
   subscription = Stream.periodic(
     const Duration(milliseconds: 100),
     (count) {
-      if (count == 1) {
+      if (count == 3) {
         throw Exception('💀');
       }
-      if (count == 3) {
+      if (count == 7) {
         subscription?.cancel();
       }
       return count;
     },
   )
-      .take(5)
+      .take(10)
+      // Setting "Stream.handleError" will disable ...
+      // "Stream.listen()"'s onError and cancelOnError.
+      //
+      // > If the error is intercepted,
+      // > the onError function can decide what to do with it.
+      // > It can throw if it wants to raise a new (or the same) error,
+      // > or simply return to make this stream forget the error.
+      // https://api.dart.dev/stable/dart-async/Stream/handleError.html
       .handleError(
-        (Object error, StackTrace stackTrace) =>
-            print('👀handleError: $error\n$stackTrace'),
-      )
-      .listen(
-        (data) => print('👀data: $data'),
-        // onError will not be called if "Stream.handleError" is set.
-        onError: (Object error, StackTrace stackTrace) =>
-            print('👀onError: $error\n$stackTrace'),
-        // onDone will not be called if done by cancel.
-        onDone: () => print('👀onDone'),
-      );
+    (Object error, StackTrace stackTrace) {
+      print('👀handleError: $error\n$stackTrace');
+    },
+  ).listen(
+    (data) => print('👀data: $data'),
+    // onDone will not be called if done by cancel.
+    //
+    // > While a subscription is paused, or when it has been canceled,
+    // > the subscription doesn't receive events
+    // > and none of the event handler functions are called.
+    // https://api.flutter.dev/flutter/async/LazyStream/listen.html
+    onDone: () => print('👀onDone'),
+    onError: (Object error, StackTrace stackTrace) {
+      print('👀onError: $error\n$stackTrace');
+    },
+    cancelOnError: true,
+  );
 }
