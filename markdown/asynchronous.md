@@ -29,6 +29,6 @@ Use [Future.delayed](https://api.flutter.dev/flutter/dart-async/Future/Future.de
 ```dart
 Future.delayed(
   Duration.zero,
-  () async => myAsyncFunction(),
+  () async => await myAsyncFunction(),
 );
 ```
