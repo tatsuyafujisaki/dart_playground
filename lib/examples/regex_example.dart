@@ -1,5 +1,5 @@
 // https://stackoverflow.com/a/78931094/10867055
-// Implements https://stackoverflow.com/a/6041965
+// Implements https://stackoverflow.com/a/6041965.
 Iterable<String> getUrls(String input) => RegExp(
       r'(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])',
     ).allMatches(input).map((match) => match.group(0)).nonNulls;
