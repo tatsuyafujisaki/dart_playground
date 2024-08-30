@@ -1,18 +1,18 @@
 enum Fruit {
-  apple(color: 'red'),
-  orange(color: 'orange');
+  apple(emoji: '🍎'),
+  orange(emoji: '🍊');
 
   const Fruit({
-    required this.color,
+    required this.emoji,
   });
 
-  factory Fruit.fromColor(String color) =>
-      values.firstWhere((value) => value.color == color);
+  factory Fruit.fromEmoji(String emoji) =>
+      values.firstWhere((value) => value.emoji == emoji);
 
-  final String color;
+  final String emoji;
 }
 
 void main() {
-  final apple = Fruit.fromColor('red');
+  final apple = Fruit.fromEmoji('🍎');
   print(apple);
 }
