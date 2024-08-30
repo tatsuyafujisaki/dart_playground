@@ -32,18 +32,6 @@ void main() async {
 }
 ```
 
-# Example of `??=`
-```dart
-String? apple1 = '🍎';
-String? apple2;
-
-apple1 ??= '🍏';
-apple2 ??= '🍏';
-
-print(apple1); // 🍎
-print(apple2); // 🍏
-```
-
 # Example of division, quotient, and remainder
 ```dart
 print(10 / 3); // 3.33..
