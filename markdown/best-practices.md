@@ -24,10 +24,6 @@ https://dart.dev/tools/pub/dependencies#best-practices
   - > Don't try to implement the Stream interface yourself.
   - > Although it's possible to create classes that extend Stream with more functionality by extending the Stream class and implementing the listen method and the extra functionality on top, that is generally not recommended because it introduces a new type that users have to consider.
 
-# Effective Dart
-- https://dart.dev/effective-dart/design#prefer-putting-the-most-descriptive-noun-last
-  - > PREFER putting the most descriptive noun last
-
 # Use A instead of B for simplicity
 A|B|Note
 --|--|--
