@@ -1,8 +1,8 @@
 /// https://dart.dev/language/constructors
 class _MyClass {
-  // Generative constructor,
-  // which cannot initialize DateTime with DateTime.now() because DateTime.Now() is not const.
-  _MyClass(this.sushi, this.myDateTime);
+  // Generative constructor
+  _MyClass(this.sushi, [DateTime? dateTime])
+      : myDateTime = dateTime ?? DateTime.now();
 
   // Named constructor
   _MyClass.myNamedConstructor1(this.sushi, [DateTime? dateTime])
