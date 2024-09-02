@@ -29,7 +29,7 @@ A|B|Note
 --|--|--
 [VoidCallback](https://api.dart.dev/stable/3.5.1/dart-html/VoidCallback.html)|void Function()|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/stable/dart-html/VoidCallback.html in Dart.
 [whenComplete](https://api.flutter.dev/flutter/dart-async/Future/whenComplete.html)|[then](https://api.flutter.dev/flutter/dart-async/Future/then.html)|if the [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html) returns nothing.
-`myNullableVariable ??= 'foo';`|`if(myNullableVariable == null) myNullableVariable = 'foo';`
+`TimeOfDay.now()`|`DateTime.now()`|if what you want is only hours and minutes.
 
 ## Use `final List` instead of `var List`
 BAD:
