@@ -29,7 +29,7 @@ class _MyClass {
 }
 
 void main() {
-  print(_MyClass('🍣', DateTime.now()));
+  print(_MyClass('🍣'));
   print(_MyClass.myNamedConstructor1('🍣'));
   print(_MyClass.myNamedConstructor2('🐟', '🍚'));
   print(_MyClass.myRedirectingConstructor1('🍣'));
