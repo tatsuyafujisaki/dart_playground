@@ -1,13 +1,3 @@
-# try-catch template
-```dart
-try {
-  // ...
-} on Exception catch (e, s) {
-  print(e);
-  print(s);
-}
-```
-
 # General
 ## Ensure that your packages depend on the freshest versions of packages when possible.
 > Be proactive in managing your dependencies. Ensure that your packages depend on the freshest versions of packages when possible. If your package depends on a stale package, that stale package may depend on other stale packages in its dependency tree. Stale versions of packages can have a negative impact on the stability, performance, and quality of your app.
