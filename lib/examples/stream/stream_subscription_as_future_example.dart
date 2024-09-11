@@ -1,16 +1,36 @@
 import 'dart:async';
 
 void main() async {
+  print('-- Example of "Stream.listen(...)" --');
+  await main1();
+  print('-- Example of "await for" --');
+  await main2();
+}
+
+Future<void> main1() async {
   final stream = Stream<String>.periodic(
     const Duration(milliseconds: 100),
     (count) => '$count!',
   ).take(3);
 
-  final subscription = stream.listen(print);
-
-  // Waits for the stream to finish.
-  final result = await subscription.asFuture<String>('💮');
-  print(result); // 💮
+  print('👀Starts consuming a stream.');
+  final subscription = stream.listen((data) => print('👀$data'));
+  final result =
+      await subscription.asFuture<String>('👀Finishes consuming a stream.');
+  print(result);
 
   await subscription.cancel();
+}
+
+Future<void> main2() async {
+  final stream = Stream<String>.periodic(
+    const Duration(milliseconds: 100),
+    (count) => '$count!',
+  ).take(3);
+
+  print('👀Starts consuming a stream.');
+  await for (final data in stream) {
+    print('👀$data');
+  }
+  print('👀Finishes consuming a stream.');
 }
