@@ -15,9 +15,6 @@ Future<void> main1() async {
 
   print('👀Starts consuming a stream.');
   final subscription = stream.listen((data) => print('👀$data'));
-  final result =
-      await subscription.asFuture<String>('👀Finishes consuming a stream.');
-  print(result);
 
   await subscription.cancel();
 }
