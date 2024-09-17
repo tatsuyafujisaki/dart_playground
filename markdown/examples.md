@@ -18,7 +18,7 @@ FutureOr<String> fetchData(String key) async {
     return _cache[key]!;
   }
   final data =
-      await Future.delayed(const Duration(seconds: 1), () => 'Data for $key');
+      await Future<String>.delayed(const Duration(seconds: 1), () => 'Data for $key');
   _cache[key] = data;
   return data;
 }
