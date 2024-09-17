@@ -16,7 +16,7 @@ class Debouncer {
 void main() {
   final debouncer = Debouncer(const Duration(seconds: 3));
 
-  count10();
+  countUp10();
 
   Timer(
     const Duration(seconds: 2),
