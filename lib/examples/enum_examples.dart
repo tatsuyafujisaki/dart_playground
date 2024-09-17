@@ -1,5 +1,3 @@
-import 'package:collection/collection.dart';
-
 enum _Fruit { apple, orange }
 
 void main() {
