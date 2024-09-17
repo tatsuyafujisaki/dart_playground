@@ -8,7 +8,7 @@ void main() async {
 }
 
 Future<String> _createFuture() => Future<String>.delayed(
-      const Duration(seconds: 10),
+      const Duration(seconds: 5),
       () => '🍎',
     );
 
