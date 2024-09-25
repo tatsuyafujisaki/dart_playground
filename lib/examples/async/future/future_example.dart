@@ -1,7 +1,10 @@
 void main() async {
-  final myFuture = Future<String>(
-    () => '🍎',
+  print(
+    await Future<String>(
+      () => '🍎',
+    ),
   );
 
-  print(await myFuture);
+  print(await Future.value('🍊'));
+  print(await Future.error('💀'));
 }
