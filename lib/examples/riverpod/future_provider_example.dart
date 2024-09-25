@@ -6,7 +6,7 @@ final _futureProvider =
 // does not invoke .when(error).
 // awaiting its future falls into the catch block of try-catch.
 final _errorFutureProvider1 =
-    FutureProvider.autoDispose<String>((_) => Future.error(Exception()));
+    FutureProvider.autoDispose<String>((_) => Future.error('💀'));
 
 // invokes .when(error).
 // awaiting its future falls into the catch block of try-catch.
