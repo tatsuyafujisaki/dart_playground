@@ -2,6 +2,7 @@
 ```dart
 print(Platform.version); // x.x.x (stable)
 ```
+https://api.flutter.dev/flutter/dart-io/Platform/version.html
 
 # Required parameter / optional parameter / named parameter / unnamed (aka positional) parameter
 ## Example of unnamed (aka positional) parameters
