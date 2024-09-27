@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:collection/collection.dart';
 
 Future<bool> get isOnline async {
   try {
