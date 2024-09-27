@@ -13,7 +13,7 @@ Stream<String> _createStream() => Stream<String>.periodic(
 Future<void> showListenExample() async {
   print('👀Starts consuming a stream.');
   final subscription = _createStream().listen((data) => print('👀$data'));
-  // "Stream.listen(...)" is asynchronous while "await for" is synchronous.
+  // Unlike "await for", listen() does not wait until the stream is done.
   // Without "await subscription.asFuture(...)",
   // the app will not wait for the stream to finish.
   final result =
@@ -25,7 +25,10 @@ Future<void> showListenExample() async {
 
 Future<void> showAwaitForExample() async {
   print('👀Starts consuming a stream.');
-  // "await for" is synchronous while "Stream.listen(...)" is asynchronous.
+  // Unlike listen(), "await for" waits until the stream is done.
+  //
+  // > When reading events using an await for loop, the loops stops when the stream is done.
+  // https://dart.dev/libraries/async/using-streams#error-events
   await for (final data in _createStream()) {
     print('👀$data');
   }
