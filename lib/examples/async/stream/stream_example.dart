@@ -31,6 +31,9 @@ void main() async {
     },
   ).listen(
     (data) => print('👀data: $data'),
+    onError: (Object error, StackTrace stackTrace) {
+      print('👀onError: $error\n$stackTrace');
+    },
     // onDone will not be called if done by cancel.
     //
     // > While a subscription is paused, or when it has been canceled,
@@ -38,9 +41,6 @@ void main() async {
     // > and none of the event handler functions are called.
     // https://api.flutter.dev/flutter/async/LazyStream/listen.html
     onDone: () => print('👀onDone'),
-    onError: (Object error, StackTrace stackTrace) {
-      print('👀onError: $error\n$stackTrace');
-    },
     cancelOnError: true,
   );
 }
