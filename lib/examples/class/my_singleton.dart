@@ -1,5 +1,4 @@
-// https://stackoverflow.com/a/55348216
-
+/// https://stackoverflow.com/a/12649574/10867055
 class MySingleton {
   factory MySingleton() => _singleton;
   MySingleton._privateConstructor();
