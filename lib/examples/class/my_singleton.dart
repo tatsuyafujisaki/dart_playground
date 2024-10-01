@@ -1,12 +1,20 @@
 /// https://stackoverflow.com/a/12649574/10867055
 class MySingleton {
   factory MySingleton() {
-    Future.delayed(Duration.zero, () => print('Future.delayed is called.'));
-    print('The constructor of MySingleton is called.');
+    if (!initialized) {
+      initialized = true;
+      Future.delayed(
+        Duration.zero,
+        () async {
+          // Do something asynchronous.
+        },
+      );
+    }
     return _singleton;
   }
-  MySingleton._privateConstructor();
-  static final _singleton = MySingleton._privateConstructor();
+  MySingleton._();
+  static final _singleton = MySingleton._();
+  static bool initialized = false;
   final initializedAt = DateTime.now();
 }
 
