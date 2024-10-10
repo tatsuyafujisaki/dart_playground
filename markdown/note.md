@@ -11,16 +11,9 @@ https://api.flutter.dev/flutter/dart-async/StreamController/close.html
 ```dart
 void main() async {
   final streamController = StreamController<void>();
+  // streamController.stream.listen((_) {});
   await streamController.close(); // gets stuck forever because it has no listeners.
-  print('StreamController is closed.'); // never prints.
-}
-```
-```dart
-void main() async {
-  final streamController = StreamController<void>();
-  streamController.stream.listen((_) {});
-  await streamController.close(); // does not get stuck because it has a listener.
-  print('StreamController is closed.'); // prints.
+  print('This never prints.'); // never prints.
 }
 ```
 ```dart
@@ -29,7 +22,7 @@ void main() async {
   if (streamController.hasListener) {
     await streamController.close();
   }
-  print('StreamController is closed.'); // prints.
+  print('This prints.');
 }
 ```
 
