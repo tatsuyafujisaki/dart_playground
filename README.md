@@ -154,6 +154,15 @@ print(set2); // {🍊, 🍏}
 ```
 
 # Map
+## How do I get an item from a Map
+```dart
+void main() async {
+  final map = <String, String>{'apple': '🍎'};
+  print(map['apple']); // 🍎
+  print(map['orange']); // null
+}
+```
+
 ## How to clone (deep copy) a Map
 ```dart
 final map1 = <String, String>{'apple': '🍎', 'orange': '🍊'};
