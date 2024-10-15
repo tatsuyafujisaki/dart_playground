@@ -3,6 +3,17 @@ import 'dart:convert';
 import 'package:dart_playground/examples/freezed/person.dart';
 
 // ignore: unreachable_from_main
+Map<String, dynamic> jsonDecodeToMap(String json) {
+  try {
+    return jsonDecode(json) as Map<String, dynamic>;
+  } on Exception catch (e, s) {
+    print(e);
+    print(s);
+  }
+  return <String, dynamic>{};
+}
+
+// ignore: unreachable_from_main
 String minifyJson(String json) => jsonEncode(jsonDecode(json));
 
 T _parseObject<T>(
