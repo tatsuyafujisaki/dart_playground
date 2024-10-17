@@ -58,7 +58,7 @@ print(fruits); // [🍏, 🍇]
 # Use A instead of B for simplicity
 A|B|Note
 --|--|--
-[VoidCallback](https://api.dart.dev/stable/3.5.1/dart-html/VoidCallback.html)|void Function()|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/stable/dart-html/VoidCallback.html in pure Dart.
-[whenComplete](https://api.flutter.dev/flutter/dart-async/Future/whenComplete.html)|[then](https://api.flutter.dev/flutter/dart-async/Future/then.html)|if the [Future](https://api.flutter.dev/flutter/dart-async/Future-class.html) returns nothing.
-`TimeOfDay.now()`|`DateTime.now()`|if what you want is only hours and minutes.
-`inspect(myObject)`|`debugPrint(myObject)`|https://api.dart.dev/stable/dart-developer/inspect.html
+[VoidCallback](https://api.dart.dev/stable/dart-html/VoidCallback.html)|`void Function()`|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/stable/dart-html/VoidCallback.html in pure Dart.
+[whenComplete](https://api.dart.dev/stable/dart-async/Future/whenComplete.html)|[then](https://api.dart.dev/stable/3.5.1/dart-async/Future/then.html)|if the [Future](https://api.dart.dev/stable/3.5.1/dart-async/Future-class.html) returns nothing.
+[inspect](https://api.dart.dev/stable/dart-developer/inspect.html)|[debugPrint](https://api.flutter.dev/flutter/foundation/debugPrint.html) or [print](https://api.dart.dev/stable/dart-core/print.html)|
+[readAsBytesSync](https://api.dart.dev/stable/dart-io/File/readAsBytesSync.html)|[readAsBytes](https://api.dart.dev/stable/dart-io/File/readAsBytes.html)
