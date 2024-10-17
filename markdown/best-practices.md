@@ -55,10 +55,12 @@ fruits.addAll(['🍏', '🍇']);
 print(fruits); // [🍏, 🍇]
 ```
 
+# Use sync methods on [File](https://api.dart.dev/stable/dart-io/File-class.html)
+For example, use [readAsBytesSync](https://api.dart.dev/stable/dart-io/File/readAsBytesSync.html) instead of [readAsBytes](https://api.dart.dev/stable/dart-io/File/readAsBytes.html).
+
 # Use A instead of B for simplicity
 A|B|Note
 --|--|--
 [VoidCallback](https://api.dart.dev/stable/dart-html/VoidCallback.html)|`void Function()`|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/stable/dart-html/VoidCallback.html in pure Dart.
 [whenComplete](https://api.dart.dev/stable/dart-async/Future/whenComplete.html)|[then](https://api.dart.dev/stable/3.5.1/dart-async/Future/then.html)|if the [Future](https://api.dart.dev/stable/3.5.1/dart-async/Future-class.html) returns nothing.
 [inspect](https://api.dart.dev/stable/dart-developer/inspect.html)|[debugPrint](https://api.flutter.dev/flutter/foundation/debugPrint.html) or [print](https://api.dart.dev/stable/dart-core/print.html)|
-[readAsBytesSync](https://api.dart.dev/stable/dart-io/File/readAsBytesSync.html)|[readAsBytes](https://api.dart.dev/stable/dart-io/File/readAsBytes.html)
