@@ -101,11 +101,13 @@ final list3 = list1.cast<String>().toList();
 print(list3.runtimeType); // List<String>
 ```
 
-# How to get an item or null (getOrNull)
+# How to get an item
 ```dart
 final fruits = ['🍎'];
 print(fruits.elementAtOrNull(0)); // 🍎
 print(fruits.elementAtOrNull(1)); // null
+print(fruits.firstWhereOrNull((element) => element == '🍏')); // null
+print(fruits.firstWhere((element) => element == '🍏', orElse: () => 'Not found!')); // Not found!
 ```
 
 # Difference between List and UnmodifiableListView
