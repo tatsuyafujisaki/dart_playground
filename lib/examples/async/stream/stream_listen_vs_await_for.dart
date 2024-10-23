@@ -27,7 +27,8 @@ Future<void> showAwaitForExample() async {
   print('👀Starts consuming a stream.');
   // Unlike listen(), "await for" waits until the stream is done.
   //
-  // > When reading events using an await for loop, the loops stops when the stream is done.
+  // > When reading events using an await for loop, the loops stops when the
+  // > stream is done.
   // https://dart.dev/libraries/async/using-streams#error-events
   await for (final data in _createStream()) {
     print('👀$data');

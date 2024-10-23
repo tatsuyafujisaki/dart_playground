@@ -1,6 +1,7 @@
 import 'package:intl/intl.dart';
 
-DateTime truncateSeconds(DateTime dateTime) => DateTime(
+// ignore: unreachable_from_main
+DateTime removeSeconds(DateTime dateTime) => DateTime(
       dateTime.year,
       dateTime.month,
       dateTime.day,

@@ -1,6 +1,7 @@
 class _MyClass {
   final _myNonFinalString = '🍎';
-  // Trying to replace myNonFinalString itself outside the class will cause a buid error.
+  // Trying to replace myNonFinalString itself outside the class will cause a
+  // buid error.
   // myTemplateClass.myNonFinalString = '🍏'; // causes a build error.
   String get myFinalString => _myNonFinalString;
 
@@ -9,12 +10,14 @@ class _MyClass {
   // Tring to replace myList itself outside the class will cause a buid error.
   // myTemplateClass.myList = ['🍏']; // causes a build error.
   //
-  // Adding, deleting, or replacing items in myList outside of the class will work.
+  // Adding, deleting, or replacing items in myList outside of the class will
+  // work.
   // myTemplateClass.myList.clear();
   // myTemplateClass.myList.addAll(['🍏']);
   List<String> get myList => _myList;
 
-  // Tring to replace myUnmodifiableList itself outside the class will cause a buid error.
+  // Tring to replace myUnmodifiableList itself outside the class will cause a
+  // buid error.
   // myTemplateClass.myUnmodifiableList = ['🍏']; // causes a build error.
   //
   // Trying to add, delete, or replace items in myList outside the class ...
