@@ -1,6 +1,6 @@
 /// https://stackoverflow.com/a/12649574/10867055
-class MySingleton {
-  factory MySingleton() {
+class MySingleton2 {
+  factory MySingleton2() {
     if (!initialized) {
       initialized = true;
       Future.delayed(
@@ -12,14 +12,14 @@ class MySingleton {
     }
     return _singleton;
   }
-  MySingleton._();
-  static final _singleton = MySingleton._();
+  MySingleton2._();
+  static final _singleton = MySingleton2._();
   static bool initialized = false;
   final initializedAt = DateTime.now();
 }
 
 void main() {
-  print(MySingleton() == MySingleton()); // true
-  print(MySingleton().initializedAt);
-  print(MySingleton().initializedAt); // prints the same timestamp as above.
+  print(MySingleton2() == MySingleton2()); // true
+  print(MySingleton2().initializedAt);
+  print(MySingleton2().initializedAt); // prints the same timestamp as above.
 }
