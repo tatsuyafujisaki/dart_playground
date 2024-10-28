@@ -1,4 +1,21 @@
+# Annotating the `main` function with `async` is GOOD.
+The Dart documentation shows `void main() async` as "GOOD".
+
+> An exception is made for top-level main functions, where the Future annotation can (and generally should) be dropped in favor of void.<br><br>
+> GOOD:
+
+```dart
+Future<void> f() async {}
+
+void main() async {
+  await f();
+}
+```
+https://dart.dev/tools/linter-rules/avoid_void_async
+
 # General
+
+https://dart.dev/tools/linter-rules/avoid_void_async
 ## Ensure that your packages depend on the freshest versions of packages when possible.
 > Be proactive in managing your dependencies. Ensure that your packages depend on the freshest versions of packages when possible. If your package depends on a stale package, that stale package may depend on other stale packages in its dependency tree. Stale versions of packages can have a negative impact on the stability, performance, and quality of your app.
 
@@ -62,5 +79,5 @@ For example, use [readAsBytesSync](https://api.dart.dev/stable/dart-io/File/read
 A|B|Note
 --|--|--
 [VoidCallback](https://api.dart.dev/stable/dart-html/VoidCallback.html)|`void Function()`|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/stable/dart-html/VoidCallback.html in pure Dart.
-[whenComplete](https://api.dart.dev/stable/dart-async/Future/whenComplete.html)|[then](https://api.dart.dev/stable/3.5.1/dart-async/Future/then.html)|if the [Future](https://api.dart.dev/stable/3.5.1/dart-async/Future-class.html) returns nothing.
+[whenComplete](https://api.dart.dev/stable/dart-async/Future/whenComplete.html)|[then](https://api.dart.dev/stable/dart-async/Future/then.html)|if the [Future](https://api.dart.dev/stable/dart-async/Future-class.html) returns nothing.
 [inspect](https://api.dart.dev/stable/dart-developer/inspect.html)|[debugPrint](https://api.flutter.dev/flutter/foundation/debugPrint.html) or [print](https://api.dart.dev/stable/dart-core/print.html)|
