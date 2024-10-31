@@ -1,4 +1,11 @@
-# Annotating the `main` function with `async` is GOOD.
+# Async
+> To catch common mistakes that arise while working with async and futures, enable the following lints:
+> - [discarded_futures](https://dart.dev/tools/linter-rules/discarded_futures)
+> - [unawaited_futures](https://dart.dev/tools/linter-rules/unawaited_futures)
+
+https://dart.dev/libraries/async/async-await
+
+## Is it good to annotate the `main` function with `async`?
 The Dart documentation shows `void main() async` as "GOOD".
 
 > An exception is made for top-level main functions, where the Future annotation can (and generally should) be dropped in favor of void.<br><br>
@@ -72,8 +79,8 @@ fruits.addAll(['🍏', '🍇']);
 print(fruits); // [🍏, 🍇]
 ```
 
-# Use sync methods on [File](https://api.dart.dev/stable/dart-io/File-class.html)
-For example, use [readAsBytesSync](https://api.dart.dev/stable/dart-io/File/readAsBytesSync.html) instead of [readAsBytes](https://api.dart.dev/stable/dart-io/File/readAsBytes.html).
+# [File](https://api.dart.dev/stable/dart-io/File-class.html)
+Use the sync versions of the methods on [File](https://api.dart.dev/stable/dart-io/File-class.html) where `await` is not available.
 
 # Use A instead of B for simplicity
 A|B|Note
