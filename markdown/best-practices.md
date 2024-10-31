@@ -86,5 +86,4 @@ Use the sync versions of the methods on [File](https://api.dart.dev/stable/dart-
 A|B|Note
 --|--|--
 [VoidCallback](https://api.dart.dev/stable/dart-html/VoidCallback.html)|`void Function()`|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/stable/dart-html/VoidCallback.html in pure Dart.
-[whenComplete](https://api.dart.dev/stable/dart-async/Future/whenComplete.html)|[then](https://api.dart.dev/stable/dart-async/Future/then.html)|if the [Future](https://api.dart.dev/stable/dart-async/Future-class.html) returns nothing.
 [inspect](https://api.dart.dev/stable/dart-developer/inspect.html)|[debugPrint](https://api.flutter.dev/flutter/foundation/debugPrint.html) or [print](https://api.dart.dev/stable/dart-core/print.html)|
