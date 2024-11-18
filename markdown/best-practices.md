@@ -87,3 +87,4 @@ A|B|Note
 --|--|--
 [VoidCallback](https://api.dart.dev/dart-html/VoidCallback.html)|`void Function()`|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/dart-html/VoidCallback.html in pure Dart.
 [inspect](https://api.dart.dev/dart-developer/inspect.html)|[debugPrint](https://api.flutter.dev/flutter/foundation/debugPrint.html) or [print](https://api.dart.dev/stable/dart-core/print.html)|
+`<E>[]`|[List\<E>.empty](https://api.dart.dev/dart-core/List/List.empty.html)
