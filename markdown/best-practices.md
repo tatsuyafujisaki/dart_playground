@@ -39,7 +39,7 @@ https://dart.dev/tools/pub/dependencies#best-practices
   - > Although it's possible to create classes that extend Stream with more functionality by extending the Stream class and implementing the listen method and the extra functionality on top, that is generally not recommended because it introduces a new type that users have to consider.
 
 ## StreamController
-Avoid getting stuck by checking [hasListener](https://api.dart.dev/stable/dart-async/StreamController/hasListener.html) before waiting for a [StreamController](https://api.dart.dev/stable/dart-async/StreamController-class.html) to close.
+Avoid getting stuck by checking [hasListener](https://api.dart.dev/dart-async/StreamController/hasListener.html) before waiting for a [StreamController](https://api.dart.dev/dart-async/StreamController-class.html) to close.
 
 ```dart
 void main() async {
@@ -61,7 +61,7 @@ void main() async {
 
 > If no one listens to a non-broadcast stream, or the listener pauses and never resumes, the done event will not be sent and this future will never complete.
 
-https://api.dart.dev/stable/dart-async/StreamController-class.html
+https://api.dart.dev/dart-async/StreamController-class.html
 
 ## Use `final List` instead of `var List`
 BAD:
@@ -79,11 +79,11 @@ fruits.addAll(['🍏', '🍇']);
 print(fruits); // [🍏, 🍇]
 ```
 
-# [File](https://api.dart.dev/stable/dart-io/File-class.html)
-Use the sync versions of the methods on [File](https://api.dart.dev/stable/dart-io/File-class.html) where `await` is not available.
+# [File](https://api.dart.dev/dart-io/File-class.html)
+Use the sync versions of the methods on [File](https://api.dart.dev/dart-io/File-class.html) where `await` is not available.
 
 # Use A instead of B for simplicity
 A|B|Note
 --|--|--
-[VoidCallback](https://api.dart.dev/stable/dart-html/VoidCallback.html)|`void Function()`|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/stable/dart-html/VoidCallback.html in pure Dart.
-[inspect](https://api.dart.dev/stable/dart-developer/inspect.html)|[debugPrint](https://api.flutter.dev/flutter/foundation/debugPrint.html) or [print](https://api.dart.dev/stable/dart-core/print.html)|
+[VoidCallback](https://api.dart.dev/dart-html/VoidCallback.html)|`void Function()`|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/dart-html/VoidCallback.html in pure Dart.
+[inspect](https://api.dart.dev/dart-developer/inspect.html)|[debugPrint](https://api.flutter.dev/flutter/foundation/debugPrint.html) or [print](https://api.dart.dev/stable/dart-core/print.html)|
