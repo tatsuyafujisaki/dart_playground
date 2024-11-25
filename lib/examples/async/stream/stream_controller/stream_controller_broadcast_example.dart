@@ -1,11 +1,9 @@
 import 'dart:async';
 
 void main() async {
-  final streamController = StreamController<String>.broadcast();
-  streamController.stream.listen((event) => print('Listening 1: $event'));
-  streamController.stream.listen((event) => print('Listening 2: $event'));
-
-  streamController
+  final streamController = StreamController<String>.broadcast()
+    ..stream.listen((event) => print('Listener 1: $event'))
+    ..stream.listen((event) => print('Listener 2: $event'))
     ..add('🍎')
     ..add('🍊');
 
