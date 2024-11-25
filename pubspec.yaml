@@ -4,6 +4,7 @@ version: 1.0.0+1
 environment:
   sdk: ^3.4.4
 dependencies:
+  async: any
   collection: any
   encrypt: any
   freezed_annotation: any
