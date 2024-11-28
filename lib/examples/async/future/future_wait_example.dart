@@ -1,4 +1,4 @@
-import 'package:dart_playground/util/timer_util.dart';
+import 'package:dart_playground/examples/timer/timer_example.dart';
 
 void main() async {
   print('Future.wait example:');
@@ -14,7 +14,7 @@ Future<String> _createFuture() => Future<String>.delayed(
 
 // Waits for 5 seconds in total.
 Future<void> _showFutureWaitExample() async {
-  final timer = countUp();
+  final timer = createAndStartPeriodicTimer();
   final future1 = _createFuture();
   final future2 = _createFuture();
   final futures = Future.wait<String>([future1, future2]);
@@ -24,7 +24,7 @@ Future<void> _showFutureWaitExample() async {
 
 // Waits for 5 seconds in total.
 Future<void> _showNonFutureWaitExample() async {
-  final timer = countUp();
+  final timer = createAndStartPeriodicTimer();
   final future1 = _createFuture();
   final future2 = _createFuture();
   final result1 = await future1;

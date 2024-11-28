@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:dart_playground/util/timer_util.dart';
+import 'package:dart_playground/examples/timer/timer_example.dart';
 
 class Debouncer {
   Debouncer(this.duration);
@@ -16,19 +16,28 @@ class Debouncer {
 void main() {
   final debouncer = Debouncer(const Duration(seconds: 3));
 
-  countUp10();
+  final timer1 = createAndStartPeriodicTimer();
 
-  Timer(
+  final timer2 = Timer(
     const Duration(seconds: 2),
     () => debouncer.run(
       () => print('Debouncer: 2 seconds passed without another call.'),
     ),
   );
 
-  Timer(
+  final timer3 = Timer(
     const Duration(seconds: 4),
     () => debouncer.run(
       () => print('Debouncer: 4 seconds passed without another call.'),
     ),
+  );
+
+  Future<void>.delayed(
+    const Duration(seconds: 60),
+    () {
+      timer1.cancel();
+      timer2.cancel();
+      timer3.cancel();
+    },
   );
 }
