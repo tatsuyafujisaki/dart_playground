@@ -1,4 +1,4 @@
-import 'package:dart_playground/examples/timer/timer_example.dart';
+import 'package:dart_playground/examples/timer/periodic_timer_example.dart';
 
 void main() async {
   print('Future.wait example:');

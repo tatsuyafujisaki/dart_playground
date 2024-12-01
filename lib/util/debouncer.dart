@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:dart_playground/examples/timer/timer_example.dart';
+import 'package:dart_playground/examples/timer/periodic_timer_example.dart';
 
 class Debouncer {
   Debouncer(this.duration);
