@@ -1,18 +1,27 @@
+import 'package:collection/collection.dart';
+
 enum Fruit {
-  apple(emoji: '🍎'),
-  orange(emoji: '🍊');
+  unknown(''),
+  apple('🍎'),
+  orange('🍊');
 
-  const Fruit({
-    required this.emoji,
-  });
+  const Fruit(this.emoji);
 
-  factory Fruit.fromEmoji(String emoji) =>
-      values.firstWhere((value) => value.emoji == emoji);
+  factory Fruit.of(String emoji) =>
+      values.firstWhereOrNull((value) => value.emoji == emoji) ?? unknown;
 
   final String emoji;
 }
 
 void main() {
-  final apple = Fruit.fromEmoji('🍎');
-  print(apple);
+  final fruit = Fruit.of('🍎');
+
+  switch (fruit) {
+    case Fruit.unknown:
+      print('Unknown fruit!');
+    case Fruit.apple:
+      print('Apple!');
+    case Fruit.orange:
+      print('Orange!');
+  }
 }
