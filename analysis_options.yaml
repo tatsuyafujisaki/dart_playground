@@ -80,7 +80,7 @@ linter:
     - prefer_asserts_with_message
     - prefer_const_constructors # included in flutter.yaml
     - prefer_const_constructors_in_immutables # included in flutter.yaml
-    - prefer_const_declarations # included in flutter.yaml
+    - prefer_const_declarations
     - prefer_const_literals_to_create_immutables # included in flutter.yaml
     - prefer_constructors_over_static_methods
     - prefer_expression_function_bodies
