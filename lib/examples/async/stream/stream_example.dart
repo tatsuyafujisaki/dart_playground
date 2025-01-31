@@ -1,7 +1,7 @@
 import 'dart:async';
 
 void main() async {
-  StreamSubscription<int>? subscription;
+  late StreamSubscription<int> subscription;
 
   subscription = Stream.periodic(
     const Duration(milliseconds: 100),
@@ -10,7 +10,7 @@ void main() async {
         throw Exception('💀');
       }
       if (count == 7) {
-        subscription?.cancel();
+        subscription.cancel();
       }
       return count;
     },
