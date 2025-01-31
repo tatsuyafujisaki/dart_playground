@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part '../../list/remove_where_example.freezed.dart';
+part 'remove_where_example.freezed.dart';
 
 @freezed
 class Fruit with _$Fruit {
