@@ -5,25 +5,25 @@ part 'riverpod_generator_examples.g.dart';
 
 /// Generates AutoDisposeProvider<bool>
 @riverpod
-String myGeneratedParameterless(MyGeneratedParameterlessRef ref) => 'Hello!';
+String myGeneratedParameterless(Ref ref) => 'Hello!';
 
 @riverpod
 String myGeneratedRequiredParameter(
-  MyGeneratedRequiredParameterRef ref,
+  Ref ref,
   String name,
 ) =>
     'Hello, $name!';
 
 @riverpod
 String myGeneratedOptionalParameter(
-  MyGeneratedOptionalParameterRef ref, [
+  Ref ref, [
   String name = 'Anonymous',
 ]) =>
     'Hello, $name!';
 
 @riverpod
 String myGeneratedRequiredParameters(
-  MyGeneratedRequiredParametersRef ref,
+  Ref ref,
   String name,
   int age,
 ) =>
