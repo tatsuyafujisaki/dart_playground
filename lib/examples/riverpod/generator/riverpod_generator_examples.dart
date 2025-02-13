@@ -3,7 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'riverpod_generator_examples.g.dart';
 
-/// Generates AutoDisposeProvider<bool>
+// Generates AutoDisposeProvider<bool>
 @riverpod
 String myGeneratedParameterless(Ref ref) => 'Hello!';
 
@@ -29,7 +29,7 @@ String myGeneratedRequiredParameters(
 ) =>
     'Hello, $age-year-old $name!';
 
-/// Generates AutoDisposeNotifierProviderImpl<MyBool, bool>
+// Generates AutoDisposeNotifierProviderImpl<MyBool, bool>
 @riverpod
 class MyBool extends _$MyBool {
   @override
