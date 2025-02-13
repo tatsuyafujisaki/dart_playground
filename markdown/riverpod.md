@@ -15,6 +15,11 @@
 https://pub.dev/documentation/riverpod/latest/riverpod/Ref/refresh.html
 
 # Best practices
+## `StateNotifierProvider` and `StateProvider`
+> Since StateNotifierProvider is deprecated, StateProvider is to be avoided, too.
+
+https://riverpod.dev/docs/migration/from_state_notifier
+
 ## ProviderContainer
 - https://docs-v2.riverpod.dev/docs/concepts/scopes
   - > DANGER: Do not use multiple ProviderContainers, without an understanding of how they work.
