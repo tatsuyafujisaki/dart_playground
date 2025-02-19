@@ -1,12 +1,12 @@
 import 'package:riverpod/riverpod.dart';
 
 final _futureProvider =
-    FutureProvider.autoDispose<String>((_) => Future.value('Hello'));
+    FutureProvider.autoDispose<String>((_) => Future<String>.value('Hello'));
 
 // does not invoke .when(error).
 // awaiting its future falls into the catch block of try-catch.
 final _errorFutureProvider1 =
-    FutureProvider.autoDispose<String>((_) => Future.error('💀'));
+    FutureProvider.autoDispose<String>((_) => Future<String>.error('💀'));
 
 // invokes .when(error).
 // awaiting its future falls into the catch block of try-catch.
