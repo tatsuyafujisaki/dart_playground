@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:dart_playground/examples/timer/periodic_timer_example.dart';
-
 class Debouncer {
   Debouncer(this.duration);
   final Duration duration;
@@ -13,10 +11,19 @@ class Debouncer {
   }
 }
 
+Timer _createAndStartPeriodicTimer([void Function()? callback]) =>
+    Timer.periodic(
+      const Duration(seconds: 1) /* inteval */,
+      (timer) {
+        print('Timer.tick: ${timer.tick}');
+        callback?.call();
+      },
+    );
+
 void main() {
   final debouncer = Debouncer(const Duration(seconds: 3));
 
-  final timer1 = createAndStartPeriodicTimer();
+  final timer1 = _createAndStartPeriodicTimer();
 
   final timer2 = Timer(
     const Duration(seconds: 2),
