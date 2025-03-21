@@ -1,4 +1,4 @@
-import 'package:dart_playground/examples/privateness/example1.dart';
+import 'example1.dart';
 
 void main() {
   // Top-level private variables are only accessible from within the same file.

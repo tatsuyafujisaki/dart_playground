@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:dart_playground/util/json/date_time_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../util/json/date_time_converter.dart';
 
 part 'person.freezed.dart';
 part 'person.g.dart';
