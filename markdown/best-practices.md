@@ -79,9 +79,6 @@ fruits.addAll(['🍏', '🍇']);
 print(fruits); // [🍏, 🍇]
 ```
 
-# [File](https://api.dart.dev/dart-io/File-class.html)
-Use the sync versions of the methods on [File](https://api.dart.dev/dart-io/File-class.html) where `await` is not available.
-
 # Use A instead of B for simplicity
 A|B|Note
 --|--|--
