@@ -86,3 +86,4 @@ A|B|Note
 [inspect](https://api.dart.dev/dart-developer/inspect.html)|[debugPrint](https://api.flutter.dev/flutter/foundation/debugPrint.html) or [print](https://api.dart.dev/stable/dart-core/print.html)|
 `<E>[]`|[List<E>.empty(growable: true)](https://api.dart.dev/dart-core/List/List.empty.html)
 [List<E>.empty()](https://api.dart.dev/dart-core/List/List.empty.html)|`<E>[]`|if the list does not need to be growable.
+[whenComplete](https://api.dart.dev/dart-async/Future/whenComplete.html)|[then](https://api.dart.dev/dart-async/Future/then.html)+[catchError](https://api.dart.dev/dart-async/Future/catchError.html)|if both `then` and `catchError` use the same callback.
