@@ -3,7 +3,9 @@ void main() async {
   final future2 = Future<String>.error('☠️');
 
   await _printFuture(future1);
+  print('--');
   await _printFuture(future2);
+  print('--');
   await _printFuture(future1, deliberatelyThrowErrorInsideThen: true);
 }
 
@@ -25,5 +27,5 @@ Future<void> _printFuture<T>(
     (Object? error) {
       print('catchError: $error');
     },
-  );
+  ).whenComplete(() => print('whenComplete'));
 }
