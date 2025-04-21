@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'remove_where_example.freezed.dart';
 
 @freezed
-class Fruit with _$Fruit {
+abstract class Fruit with _$Fruit {
   const factory Fruit({
     required String emoji,
   }) = _Fruit;

@@ -7,7 +7,7 @@ part 'album.g.dart';
 
 /// https://jsonplaceholder.typicode.com/albums/1
 @freezed
-class Album with _$Album {
+abstract class Album with _$Album {
   const factory Album({
     int? userId,
     int? id,
