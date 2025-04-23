@@ -20,6 +20,21 @@ void main() async {
 ```
 https://dart.dev/tools/linter-rules/avoid_void_async
 
+# Static class
+If you opt out of the [avoid_classes_with_only_static_members](https://dart.dev/tools/linter-rules/avoid_classes_with_only_static_members) rule, you may as well mark the classes with [abstract interface](https://dart.dev/language/class-modifiers#abstract-interface) to prevent them from being constructed and being inherited as follows.
+
+```dart
+abstract interface class Fruit {
+  static const apple = '🍎';
+  static const orange = '🍊';
+}
+
+void main() {
+  print(Fruit.apple); // 🍎
+  print(Fruit.orange); // 🍊
+}
+```
+
 # General
 
 https://dart.dev/tools/linter-rules/avoid_void_async
@@ -79,7 +94,7 @@ fruits.addAll(['🍏', '🍇']);
 print(fruits); // [🍏, 🍇]
 ```
 
-# Use A instead of B for simplicity
+# Use A instead of B
 A|B|Note
 --|--|--
 [VoidCallback](https://api.dart.dev/dart-html/VoidCallback.html)|`void Function()`|Use https://api.flutter.dev/flutter/dart-ui/VoidCallback.html in Flutter.<br>Use https://api.dart.dev/dart-html/VoidCallback.html in pure Dart.
